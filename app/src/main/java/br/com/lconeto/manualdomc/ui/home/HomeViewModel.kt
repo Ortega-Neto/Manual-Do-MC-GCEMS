@@ -1,4 +1,4 @@
-package br.com.lconeto.manualdomc_gcems.ui.home
+package br.com.lconeto.manualdomc.ui.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

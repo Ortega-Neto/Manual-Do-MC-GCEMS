@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="br.com.lconeto.manualdomc_gcems.ui.home.HomeFragment"
+        android:name="br.com.lconeto.manualdomc.ui.home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="br.com.lconeto.manualdomc_gcems.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
+        android:id="@+id/nav_preface"
+        android:name="br.com.lconeto.manualdomc.ui.preface.PrefaceFragment"
+        android:label="@string/menu_preface"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="br.com.lconeto.manualdomc_gcems.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
+        android:id="@+id/nav_contacts"
+        android:name="br.com.lconeto.manualdomc.ui.contacts.ContactsFragment"
+        android:label="@string/menu_contacts"
         tools:layout="@layout/fragment_slideshow" />
 </navigation>

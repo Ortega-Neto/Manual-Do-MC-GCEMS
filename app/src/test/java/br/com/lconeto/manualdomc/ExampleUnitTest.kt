@@ -1,4 +1,4 @@
-package br.com.lconeto.manualdomc_gcems
+package br.com.lconeto.manualdomc
 
 import org.junit.Test
 

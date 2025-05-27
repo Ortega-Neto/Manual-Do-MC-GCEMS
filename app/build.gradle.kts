@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "br.com.lconeto.manualdomc_gcems"
+    namespace = "br.com.lconeto.manualdomc"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "br.com.lconeto.manualdomc_gcems"
+        applicationId = "br.com.lconeto.manualdomc"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
