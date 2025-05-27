@@ -1,13 +1,13 @@
-package br.com.lconeto.manualdomc.ui.preface
+package br.com.lconeto.manualdomc.contacts
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class PrefaceViewModel : ViewModel() {
+class ContactsViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is gallery Fragment"
+        value = "This is slideshow Fragment"
     }
     val text: LiveData<String> = _text
 }
