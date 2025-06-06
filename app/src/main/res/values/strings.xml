@@ -12,4 +12,8 @@
     <string name="menu_contacts">Contatos</string>
     <string name="menu_bank_details">Dados Bancários</string>
     <string name="menu_projects">Projetos</string>
+
+    <!--  Labels  -->
+    <string name="label_project_name">Project Name</string>
+    <string name="label_project_description">This is a short description of the project.</string>
 </resources>
