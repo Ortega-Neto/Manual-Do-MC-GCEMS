@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/nav_contacts"
-        android:name="br.com.lconeto.manualdomc.contacts.ContactsFragment"
+        android:name="br.com.lconeto.manualdomc.contacts.presentation.ContactsFragment"
         android:label="@string/menu_contacts"
         tools:layout="@layout/fragment_contacts" />
 

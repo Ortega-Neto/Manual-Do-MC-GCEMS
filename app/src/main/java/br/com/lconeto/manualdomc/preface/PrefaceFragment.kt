@@ -20,17 +20,23 @@ class PrefaceFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val prefaceViewModel =
-            ViewModelProvider(this)[PrefaceViewModel::class.java]
-
         _binding = FragmentPrefaceBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        return binding.root
+    }
 
-        val textView: TextView = binding.textGallery
-        prefaceViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
-        return root
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.textPrefaceDescription.text = """
+            Um novo capítulo se desvela diante de você, trazendo a nobre responsabilidade de liderar aqueles que confiam em sua capacidade. O Guia para Mestres Conselheiros será seu farol, iluminando sua jornada e ajudando a enfrentar desafios e a aproveitar oportunidades de crescimento.
+            
+            Lembre-se, você é mais do que um "indivíduo com um colar". Você é o maestro de uma sinfonia, unindo talentos. Trabalhe em equipe, distribua responsabilidades e fortaleça a união, pois é assim que formamos líderes e fortalecemos o futuro.
+            
+            A rica história de seu capítulo agora está em suas mãos. Como arquiteto do futuro, molde cada página com sabedoria, pois suas ações ecoarão no tempo, influenciando as próximas gerações.
+            
+            Liderar na Ordem DeMolay é inspirar e servir. Mostre que seus irmãos são essenciais para manter viva a chama eterna dessa Nobre Causa. Seja exemplo de humildade e caridade, provando que a chama jamais se apagará enquanto houver liderança com propósito.
+            
+            Avance com coragem e resiliência. A confiança depositada em você reflete seu potencial. Deixe um legado que ilumine o caminho para as gerações futuras e fortaleça a Ordem DeMolay.
+        """.trimIndent()
     }
 
     override fun onDestroyView() {

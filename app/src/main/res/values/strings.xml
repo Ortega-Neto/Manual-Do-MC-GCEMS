@@ -7,6 +7,7 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
+    <!--  Menu  -->
     <string name="menu_home">Início</string>
     <string name="menu_preface">Prefácio</string>
     <string name="menu_contacts">Contatos</string>
@@ -16,4 +17,6 @@
     <!--  Labels  -->
     <string name="label_project_name">Project Name</string>
     <string name="label_project_description">This is a short description of the project.</string>
+
+    <string name="preface_title">Prefácio</string>
 </resources>

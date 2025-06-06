@@ -1,4 +1,4 @@
-package br.com.lconeto.manualdomc.contacts
+package br.com.lconeto.manualdomc.contacts.presentation
 
 import android.os.Bundle
 import android.view.LayoutInflater
