@@ -1,4 +1,4 @@
-package br.com.lconeto.manualdomc.showProject
+package br.com.lconeto.manualdomc.projects.presentation.showProject
 
 import android.os.Bundle
 import android.view.LayoutInflater

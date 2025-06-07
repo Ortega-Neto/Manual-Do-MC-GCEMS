@@ -17,6 +17,8 @@
     <!--  Labels  -->
     <string name="label_project_name">Project Name</string>
     <string name="label_project_description">This is a short description of the project.</string>
+    <string name="label_email">Email</string>
+    <string name="label_cellphone">Celular - WhatsApp</string>
 
     <string name="preface_title">Prefácio</string>
 </resources>

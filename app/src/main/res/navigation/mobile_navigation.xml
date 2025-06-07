@@ -21,7 +21,11 @@
         android:id="@+id/nav_contacts"
         android:name="br.com.lconeto.manualdomc.contacts.presentation.ContactsFragment"
         android:label="@string/menu_contacts"
-        tools:layout="@layout/fragment_contacts" />
+        tools:layout="@layout/fragment_contacts" >
+        <action
+            android:id="@+id/action_nav_contacts_to_showContactsFragment"
+            app:destination="@id/showContactsFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_projects"
@@ -32,13 +36,25 @@
             android:id="@+id/action_nav_projects_to_showProjectFragment"
             app:destination="@id/showProjectFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/showProjectFragment"
-        android:name="br.com.lconeto.manualdomc.showProject.ShowProjectFragment"
-        android:label="ShowProjectFragment" >
+        android:name="br.com.lconeto.manualdomc.projects.presentation.showProject.ShowProjectFragment"
+        android:label="ShowProjectFragment"
+        tools:layout="@layout/fragment_show_project" >
         <argument
             android:name="project"
             app:argType="br.com.lconeto.manualdomc.projects.data.ProjectVO" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/showContactsFragment"
+        android:name="br.com.lconeto.manualdomc.contacts.presentation.showContacts.ShowContactsFragment"
+        android:label="ShowContactsFragment"
+        tools:layout="@layout/fragment_show_contacts">
+        <argument
+            android:name="contactCategory"
+            app:argType="br.com.lconeto.manualdomc.contacts.data.contactLists.ContactCategory" />
     </fragment>
 
 </navigation>

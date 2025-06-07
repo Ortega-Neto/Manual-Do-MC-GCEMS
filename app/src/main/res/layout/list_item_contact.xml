@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/margin_8">
+
+    <ImageView
+        android:id="@+id/image_person"
+        android:layout_width="@dimen/margin_48"
+        android:layout_height="@dimen/margin_48"
+        android:layout_marginStart="@dimen/margin_16"
+        android:layout_marginTop="@dimen/margin_8"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/ic_person"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/contact_name"
+        android:layout_width="@dimen/margin_0"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_16"
+        android:layout_marginEnd="@dimen/margin_16"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_16"
+        android:clickable="true"
+        android:textIsSelectable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/image_person"
+        app:layout_constraintTop_toTopOf="@id/image_person"
+        tools:text="André Peteca" />
+
+    <TextView
+        android:id="@+id/contact_title"
+        android:layout_width="@dimen/margin_0"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_16"
+        android:layout_marginEnd="@dimen/margin_16"
+        android:textSize="@dimen/text_14"
+        android:clickable="true"
+        android:textIsSelectable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/image_person"
+        app:layout_constraintTop_toBottomOf="@id/contact_name"
+        tools:text="Grande Mestre Estadual" />
+
+    <ImageView
+        android:id="@+id/icon_email"
+        android:layout_width="@dimen/margin_24"
+        android:layout_height="@dimen/margin_24"
+        android:layout_marginStart="@dimen/margin_16"
+        android:layout_marginTop="@dimen/margin_16"
+        android:src="@drawable/ic_email"
+        app:tint="@android:color/darker_gray"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/contact_title" />
+
+    <TextView
+        android:id="@+id/label_email"
+        android:layout_width="@dimen/margin_0"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_16"
+        android:text="@string/label_email"
+        android:textSize="@dimen/text_14"
+        app:layout_constraintEnd_toStartOf="@id/copy_email"
+        app:layout_constraintStart_toEndOf="@id/icon_email"
+        app:layout_constraintTop_toTopOf="@id/icon_email" />
+
+    <TextView
+        android:id="@+id/contact_email"
+        android:layout_width="@dimen/margin_0"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_16"
+        android:textSize="@dimen/text_14"
+        android:clickable="true"
+        android:textIsSelectable="true"
+        app:layout_constraintEnd_toStartOf="@id/copy_email"
+        app:layout_constraintStart_toEndOf="@id/icon_email"
+        app:layout_constraintTop_toBottomOf="@id/label_email"
+        tools:text="pet@peteca.com.br" />
+
+    <ImageView
+        android:id="@+id/copy_email"
+        android:layout_width="@dimen/margin_24"
+        android:layout_height="@dimen/margin_24"
+        android:layout_marginEnd="@dimen/margin_16"
+        android:src="@drawable/ic_copy"
+        app:tint="@android:color/darker_gray"
+        app:layout_constraintBottom_toBottomOf="@id/contact_email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/label_email" />
+
+    <ImageView
+        android:id="@+id/icon_phone"
+        android:layout_width="@dimen/margin_24"
+        android:layout_height="@dimen/margin_24"
+        android:layout_marginStart="@dimen/margin_16"
+        android:layout_marginTop="@dimen/margin_16"
+        android:src="@drawable/ic_cellphone"
+        app:tint="@android:color/darker_gray"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/contact_email" />
+
+    <TextView
+        android:id="@+id/label_phone"
+        android:layout_width="@dimen/margin_0"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_16"
+        android:text="@string/label_cellphone"
+        android:textSize="@dimen/text_14"
+        app:layout_constraintEnd_toStartOf="@id/copy_phone"
+        app:layout_constraintStart_toEndOf="@id/icon_phone"
+        app:layout_constraintTop_toTopOf="@id/icon_phone" />
+
+    <TextView
+        android:id="@+id/contact_phone"
+        android:layout_width="@dimen/margin_0"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_16"
+        android:textSize="@dimen/text_14"
+        android:clickable="true"
+        android:textIsSelectable="true"
+        app:layout_constraintEnd_toStartOf="@id/copy_phone"
+        app:layout_constraintStart_toEndOf="@id/icon_phone"
+        app:layout_constraintTop_toBottomOf="@id/label_phone"
+        tools:text="(67) 9 9999-9999" />
+
+    <ImageView
+        android:id="@+id/copy_phone"
+        android:layout_width="@dimen/margin_24"
+        android:layout_height="@dimen/margin_24"
+        android:layout_marginEnd="@dimen/margin_16"
+        android:src="@drawable/ic_copy"
+        app:tint="@android:color/darker_gray"
+        app:layout_constraintBottom_toBottomOf="@id/contact_phone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/label_phone" />
+
+    <View
+        android:id="@+id/divider_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_1"
+        android:background="@color/colorPrimaryVariant"
+        android:layout_marginTop="@dimen/margin_8"
+        android:layout_marginStart="@dimen/margin_16"
+        android:layout_marginEnd="@dimen/margin_16"
+        app:layout_constraintTop_toBottomOf="@id/contact_phone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
