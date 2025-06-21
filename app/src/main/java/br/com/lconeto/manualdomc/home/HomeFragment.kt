@@ -4,9 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import br.com.lconeto.manualdomc.R
 import br.com.lconeto.manualdomc.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -20,17 +19,28 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this)[HomeViewModel::class.java]
-
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        return binding.root
+    }
 
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
-        return root
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        populateButtons()
+        setupListeners()
+    }
+
+    private fun populateButtons() {
+        binding.homeMeeting.textContactTitle.text = getString(R.string.home_meetings)
+        binding.homePositions.textContactTitle.text = getString(R.string.home_positions)
+        binding.homePackages.textContactTitle.text = getString(R.string.home_packages)
+        binding.homeTickets.textContactTitle.text = getString(R.string.home_tickets)
+    }
+
+    private fun setupListeners() {
+        binding.homeMeeting.root.setOnClickListener {  }
+        binding.homePositions.root.setOnClickListener {  }
+        binding.homePackages.root.setOnClickListener {  }
+        binding.homeTickets.root.setOnClickListener {  }
     }
 
     override fun onDestroyView() {

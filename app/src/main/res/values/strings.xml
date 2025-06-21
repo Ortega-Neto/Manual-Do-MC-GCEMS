@@ -14,6 +14,12 @@
     <string name="menu_bank_details">Dados Bancários</string>
     <string name="menu_projects">Projetos</string>
 
+    <!--  Home  -->
+    <string name="home_meetings">Reuniões</string>
+    <string name="home_positions">Nominata</string>
+    <string name="home_packages">Pacotes</string>
+    <string name="home_tickets">Tickets</string>
+
     <!--  Bank Details  -->
     <string name="bank_details_title">Conta Bancária/PIX do GCEMS</string>
     <string name="bank_details_pix_title">Pix do GCEMS</string>
