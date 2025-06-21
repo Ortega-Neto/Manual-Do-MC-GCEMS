@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/margin_16">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/bank_details_title"
+        android:textSize="@dimen/text_22"
+        android:textStyle="bold"
+        android:gravity="center_horizontal"
+        android:paddingBottom="@dimen/margin_16"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_pix_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/bank_details_pix_title"
+        android:textSize="@dimen/text_20"
+        android:textStyle="bold"
+        android:paddingTop="@dimen/margin_8"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_copy_pix"
+        app:layout_constraintBottom_toTopOf="@id/tv_pix_value"/>
+
+    <ImageView
+        android:id="@+id/btn_copy_pix"
+        android:layout_width="@dimen/margin_24"
+        android:layout_height="@dimen/margin_24"
+        android:layout_marginEnd="@dimen/margin_8"
+        android:src="@drawable/ic_copy"
+        app:tint="?attr/themeButtonColor"
+        app:layout_constraintTop_toTopOf="@id/tv_pix_title"
+        app:layout_constraintBottom_toBottomOf="@id/tv_pix_title"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_pix_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/bank_details_pix"
+        android:textSize="@dimen/text_18"
+        android:paddingBottom="@dimen/margin_16"
+        android:textIsSelectable="true"
+        app:layout_constraintTop_toBottomOf="@id/tv_pix_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_account_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/bank_details_account"
+        android:textSize="@dimen/text_20"
+        android:textStyle="bold"
+        android:paddingTop="@dimen/margin_8"
+        app:layout_constraintTop_toBottomOf="@id/tv_pix_value"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_copy_account"
+        app:layout_constraintBottom_toTopOf="@id/tv_account_agency"/>
+
+    <ImageView
+        android:id="@+id/btn_copy_account"
+        android:layout_width="@dimen/margin_24"
+        android:layout_height="@dimen/margin_24"
+        android:layout_marginEnd="@dimen/margin_8"
+        android:src="@drawable/ic_copy"
+        app:tint="?attr/themeButtonColor"
+        app:layout_constraintTop_toTopOf="@id/tv_account_title"
+        app:layout_constraintBottom_toBottomOf="@id/tv_account_title"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_account_agency"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/bank_details_account_agency"
+        android:textSize="@dimen/text_18"
+        android:textIsSelectable="true"
+        app:layout_constraintTop_toBottomOf="@id/tv_account_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_account_number"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/bank_details_account_number"
+        android:textSize="@dimen/text_18"
+        android:textIsSelectable="true"
+        app:layout_constraintTop_toBottomOf="@id/tv_account_agency"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_account_type"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/bank_details_account_type"
+        android:textSize="@dimen/text_18"
+        android:textIsSelectable="true"
+        app:layout_constraintTop_toBottomOf="@id/tv_account_number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_account_holder"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/bank_details_account_holder"
+        android:textSize="@dimen/text_18"
+        android:paddingBottom="@dimen/margin_16"
+        android:textIsSelectable="true"
+        app:layout_constraintTop_toBottomOf="@id/tv_account_type"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_emails_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/bank_details_emails"
+        android:textSize="@dimen/text_20"
+        android:textStyle="bold"
+        android:paddingTop="@dimen/margin_8"
+        app:layout_constraintTop_toBottomOf="@id/tv_account_holder"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_email_secretary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/bank_details_email_secretary"
+        android:layout_marginTop="@dimen/margin_8"
+        android:textSize="@dimen/text_16"
+        android:textColorLink="@color/linkColor"
+        android:autoLink="email"
+        app:layout_constraintTop_toBottomOf="@id/tv_emails_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+        android:id="@+id/btn_copy_email_secretary"
+        android:layout_width="@dimen/margin_24"
+        android:layout_height="@dimen/margin_24"
+        android:layout_marginEnd="@dimen/margin_8"
+        android:src="@drawable/ic_copy"
+        app:tint="?attr/themeButtonColor"
+        app:layout_constraintTop_toTopOf="@id/tv_email_secretary"
+        app:layout_constraintBottom_toBottomOf="@id/tv_email_secretary"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_email_adjunt_secretary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/bank_details_email_adjunt_secretary"
+        android:textSize="@dimen/text_16"
+        android:textColorLink="@color/linkColor"
+        android:layout_marginTop="@dimen/margin_8"
+        android:autoLink="email"
+        app:layout_constraintTop_toBottomOf="@id/tv_email_secretary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+        android:id="@+id/btn_copy_email_adjunt_secretary"
+        android:layout_width="@dimen/margin_24"
+        android:layout_height="@dimen/margin_24"
+        android:layout_marginEnd="@dimen/margin_8"
+        android:src="@drawable/ic_copy"
+        app:tint="?attr/themeButtonColor"
+        app:layout_constraintTop_toTopOf="@id/tv_email_adjunt_secretary"
+        app:layout_constraintBottom_toBottomOf="@id/tv_email_adjunt_secretary"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_alert_box"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/margin_24"
+        android:layout_marginHorizontal="@dimen/margin_16"
+        android:padding="@dimen/margin_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_email_adjunt_secretary">
+
+        <ImageView
+            android:layout_width="@dimen/margin_24"
+            android:layout_height="@dimen/margin_24"
+            android:layout_gravity="center"
+            android:src="@android:drawable/ic_dialog_alert"
+            app:tint="@color/colorSecondary" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16"
+            android:layout_weight="1"
+            android:text="@string/bank_details_alert_message"
+            android:textColor="@color/colorSecondary"
+            android:justificationMode="inter_word"
+            android:textSize="@dimen/text_16"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

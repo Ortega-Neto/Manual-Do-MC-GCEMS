@@ -1,14 +1,9 @@
 package br.com.lconeto.manualdomc.contacts.presentation.showContacts.adapter
 
-import android.content.ClipData
-import android.content.ClipboardManager
-import android.content.Context
-import android.content.Intent
-import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import br.com.lconeto.manualdomc.common.domain.extensions.copyTextToClipboard
 import br.com.lconeto.manualdomc.contacts.data.Contact
 import br.com.lconeto.manualdomc.databinding.ListItemContactBinding
 
@@ -49,22 +44,8 @@ class ShowContactAdapter(private val contacts: List<Contact>) :
                 copyEmail.visibility = android.view.View.VISIBLE
 
                 contactEmail.text = contact.email
-                contactEmail.setOnClickListener {
-                    val intent = Intent(Intent.ACTION_SENDTO).apply {
-                        data = Uri.parse("mailto:${contact.email}")
-                    }
-                    if (intent.resolveActivity(it.context.packageManager) != null) {
-                        it.context.startActivity(intent)
-                    } else {
-                        Toast.makeText(
-                            it.context,
-                            "Nenhum aplicativo de e-mail encontrado.",
-                            Toast.LENGTH_SHORT
-                        ).show()
-                    }
-                }
                 copyEmail.setOnClickListener {
-                    copyTextToClipboard(it.context, contact.email, "E-mail copiado!")
+                    it.copyTextToClipboard(contact.email)
                 }
             } else {
                 iconEmail.visibility = android.view.View.GONE
@@ -76,30 +57,9 @@ class ShowContactAdapter(private val contacts: List<Contact>) :
 
         private fun ListItemContactBinding.setCellphone(contact: Contact) {
             contactPhone.text = contact.cellphone
-            contactPhone.setOnClickListener {
-                val intent = Intent(Intent.ACTION_DIAL).apply {
-                    data = Uri.parse("tel:${contact.cellphone.filter { it.isDigit() }}")
-                }
-                if (intent.resolveActivity(it.context.packageManager) != null) {
-                    it.context.startActivity(intent)
-                } else {
-                    Toast.makeText(
-                        it.context,
-                        "Nenhum aplicativo de telefone encontrado.",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-            }
             copyPhone.setOnClickListener {
-                copyTextToClipboard(it.context, contact.cellphone, "Telefone copiado!")
+                it.copyTextToClipboard(contact.cellphone)
             }
-        }
-
-        private fun copyTextToClipboard(context: Context, text: String, message: String) {
-            val clipboard = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-            val clip = ClipData.newPlainText("Copied Text", text)
-            clipboard.setPrimaryClip(clip)
-            Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
         }
     }
 }

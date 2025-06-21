@@ -12,6 +12,7 @@ import androidx.navigation.NavArgs
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import br.com.lconeto.manualdomc.common.domain.extensions.setTitleName
 import br.com.lconeto.manualdomc.databinding.FragmentProjectsBinding
 import br.com.lconeto.manualdomc.databinding.FragmentShowProjectBinding
 import br.com.lconeto.manualdomc.projects.data.ProjectVO
@@ -36,7 +37,7 @@ class ShowProjectFragment : Fragment(), OnProjectClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        (requireActivity() as AppCompatActivity).supportActionBar?.title = args.project.name
+        setTitleName(args.project.name)
         populateView()
     }
 

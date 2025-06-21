@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import br.com.lconeto.manualdomc.common.domain.extensions.setTitleName
 import br.com.lconeto.manualdomc.contacts.presentation.showContacts.adapter.ShowContactAdapter
 import br.com.lconeto.manualdomc.databinding.FragmentShowContactsBinding
 
@@ -29,7 +30,7 @@ class ShowContactsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        (requireActivity() as AppCompatActivity).supportActionBar?.title = args.contactCategory.title
+        setTitleName(args.contactCategory.title)
         populateRecyclerView()
     }
 

@@ -57,4 +57,10 @@
             app:argType="br.com.lconeto.manualdomc.contacts.data.contactLists.ContactCategory" />
     </fragment>
 
+    <fragment
+        android:id="@+id/nav_bankDetails"
+        android:name="br.com.lconeto.manualdomc.bank.presentation.BankDetailsFragment"
+        android:label="@string/menu_bank_details"
+        tools:layout="@layout/fragment_bank_details"/>
+
 </navigation>

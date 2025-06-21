@@ -11,7 +11,7 @@
 
     <include
         android:id="@+id/contact_gc"
-        layout="@layout/component_contact_title"
+        layout="@layout/component_card_image_name"
         android:layout_marginTop="@dimen/margin_24"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -19,7 +19,7 @@
 
     <include
         android:id="@+id/contact_sc"
-        layout="@layout/component_contact_title"
+        layout="@layout/component_card_image_name"
         android:layout_marginTop="@dimen/margin_24"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -27,7 +27,7 @@
 
     <include
         android:id="@+id/contact_eo"
-        layout="@layout/component_contact_title"
+        layout="@layout/component_card_image_name"
         android:layout_marginTop="@dimen/margin_24"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -35,7 +35,7 @@
 
     <include
         android:id="@+id/contact_rmc"
-        layout="@layout/component_contact_title"
+        layout="@layout/component_card_image_name"
         android:layout_marginTop="@dimen/margin_24"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

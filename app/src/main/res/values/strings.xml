@@ -14,6 +14,21 @@
     <string name="menu_bank_details">Dados Bancários</string>
     <string name="menu_projects">Projetos</string>
 
+    <!--  Bank Details  -->
+    <string name="bank_details_title">Conta Bancária/PIX do GCEMS</string>
+    <string name="bank_details_pix_title">Pix do GCEMS</string>
+    <string name="bank_details_pix">Pix - CNPJ: 04.845.802/0001-53</string>
+    <string name="bank_details_emails">E-mails do GCEMS:</string>
+    <string name="bank_details_account_holder">Titular da Conta: Grande Conselho Estadual da Ordem DeMolay do Estado de Mato Grosso do Sul</string>
+    <string name="bank_details_account">Dados Bancários</string>
+    <string name="bank_details_account_agency">Agência: 4354</string>
+    <string name="bank_details_account_number">Conta: 91191-7</string>
+    <string name="bank_details_account_type">Tipo de Conta: Conta Corrente</string>
+    <string name="bank_details_email_secretary">grandesecretario@demolayms.org</string>
+    <string name="bank_details_email_adjunt_secretary">grandesecretarioadj@demolayms.org</string>
+    <string name="bank_details_alert_message">Inclua sempre o número do pacote na descrição ao pagar e envie o comprovante para os GCEMS pelos e-mails acima.</string>
+
+
     <!--  Labels  -->
     <string name="label_project_name">Project Name</string>
     <string name="label_project_description">This is a short description of the project.</string>
@@ -22,4 +37,5 @@
 
     <string name="preface_title">Prefácio</string>
     <string name="placeholder">placeholder</string>
+
 </resources>
