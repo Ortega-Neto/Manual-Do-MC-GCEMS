@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.GridLayoutManager
@@ -28,12 +29,13 @@ class ShowContactsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        (requireActivity() as AppCompatActivity).supportActionBar?.title = args.contactCategory.title
         populateRecyclerView()
     }
 
     private fun populateRecyclerView() {
         val projectsRecyclerView: RecyclerView = binding.contactsRecyclerView
-        projectsRecyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
+        projectsRecyclerView.layoutManager = GridLayoutManager(requireContext(), 1)
 
         projectsRecyclerView.adapter = ShowContactAdapter(
             contacts = args.contactCategory.contacts,

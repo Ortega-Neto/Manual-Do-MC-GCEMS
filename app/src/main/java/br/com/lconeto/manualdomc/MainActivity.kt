@@ -31,7 +31,8 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.nav_home, R.id.nav_preface, R.id.nav_contacts
-            ), drawerLayout
+            ),
+            drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
@@ -41,7 +42,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun setAppVersion() {
         val packageInfo = this.packageManager.getPackageInfo(
-            this.packageName, 0
+            this.packageName,
+            0
         )
 
         val version = packageInfo.versionName ?: ERROR_VERSION
