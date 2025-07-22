@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavDirections
+import androidx.navigation.fragment.findNavController
 import br.com.lconeto.manualdomc.R
 import br.com.lconeto.manualdomc.databinding.FragmentHomeBinding
 
@@ -31,16 +33,24 @@ class HomeFragment : Fragment() {
 
     private fun populateButtons() {
         binding.homeMeeting.textContactTitle.text = getString(R.string.home_meetings)
-        binding.homePositions.textContactTitle.text = getString(R.string.home_positions)
+        binding.homeRoles.textContactTitle.text = getString(R.string.home_roles)
+        binding.homeRoles.imageContactTitle.setImageResource(R.drawable.ic_role)
         binding.homePackages.textContactTitle.text = getString(R.string.home_packages)
         binding.homeTickets.textContactTitle.text = getString(R.string.home_tickets)
     }
 
     private fun setupListeners() {
-        binding.homeMeeting.root.setOnClickListener {  }
-        binding.homePositions.root.setOnClickListener {  }
-        binding.homePackages.root.setOnClickListener {  }
-        binding.homeTickets.root.setOnClickListener {  }
+        binding.homeMeeting.root.setOnClickListener { }
+        binding.homeRoles.root.setOnClickListener {
+            navigateTo(HomeFragmentDirections.actionNavHomeToEditRolesFragment())
+        }
+        binding.homePackages.root.setOnClickListener { }
+        binding.homeTickets.root.setOnClickListener { }
+    }
+
+    private fun navigateTo(action: NavDirections) {
+        val navController = findNavController()
+        navController.navigate(action)
     }
 
     override fun onDestroyView() {

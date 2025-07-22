@@ -9,7 +9,11 @@
         android:id="@+id/nav_home"
         android:name="br.com.lconeto.manualdomc.home.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_editRolesFragment"
+            app:destination="@id/editRolesFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_preface"
@@ -62,5 +66,9 @@
         android:name="br.com.lconeto.manualdomc.bank.presentation.BankDetailsFragment"
         android:label="@string/menu_bank_details"
         tools:layout="@layout/fragment_bank_details"/>
+    <fragment
+        android:id="@+id/editRolesFragment"
+        android:name="br.com.lconeto.manualdomc.roles.presentation.EditRolesFragment"
+        android:label="EditRolesFragment" />
 
 </navigation>

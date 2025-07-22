@@ -16,7 +16,7 @@
 
     <!--  Home  -->
     <string name="home_meetings">Reuniões</string>
-    <string name="home_positions">Nominata</string>
+    <string name="home_roles">Nominata</string>
     <string name="home_packages">Pacotes</string>
     <string name="home_tickets">Tickets</string>
 
@@ -40,8 +40,15 @@
     <string name="label_project_description">This is a short description of the project.</string>
     <string name="label_email">Email</string>
     <string name="label_cellphone">Celular - WhatsApp</string>
+    <string name="label_placeholder">placeholder</string>
+    <string name="label_role_name">Cargo</string>
+    <string name="label_name">Nome</string>
 
+    <!--  Preface  -->
     <string name="preface_title">Prefácio</string>
-    <string name="placeholder">placeholder</string>
+
+    <!--  Roles  -->
+    <string name="roles_button_roles_save">Salvar Cargos</string>
+    <string name="roles_error_missing_role">Cargo obrigatório para reunião</string>
 
 </resources>

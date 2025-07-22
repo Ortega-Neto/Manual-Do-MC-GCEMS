@@ -13,15 +13,15 @@
         android:id="@+id/home_meeting"
         layout="@layout/component_card_image_name"
         android:layout_marginTop="@dimen/margin_24"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/margin_0"
         android:layout_height="wrap_content"
         android:layout_columnWeight="1" />
 
     <include
-        android:id="@+id/home_positions"
+        android:id="@+id/home_roles"
         layout="@layout/component_card_image_name"
         android:layout_marginTop="@dimen/margin_24"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/margin_0"
         android:layout_height="wrap_content"
         android:layout_columnWeight="1" />
 
@@ -29,7 +29,7 @@
         android:id="@+id/home_packages"
         layout="@layout/component_card_image_name"
         android:layout_marginTop="@dimen/margin_24"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/margin_0"
         android:layout_height="wrap_content"
         android:layout_columnWeight="1" />
 
@@ -37,7 +37,7 @@
         android:id="@+id/home_tickets"
         layout="@layout/component_card_image_name"
         android:layout_marginTop="@dimen/margin_24"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/margin_0"
         android:layout_height="wrap_content"
         android:layout_columnWeight="1" />
 
