@@ -53,4 +53,9 @@ class BankDetailsFragment : Fragment() {
             "$agency \n" +
             "$number \n" + type
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }

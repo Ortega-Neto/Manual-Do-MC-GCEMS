@@ -1,4 +1,4 @@
-package br.com.lconeto.manualdomc.home
+package br.com.lconeto.manualdomc.home.presentation
 
 import android.os.Bundle
 import android.view.LayoutInflater
