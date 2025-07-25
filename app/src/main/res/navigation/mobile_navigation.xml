@@ -99,6 +99,9 @@
             app:argType="br.com.lconeto.manualdomc.common.data.entity.check.CheckObservation"
             app:nullable="true"
             android:defaultValue="@null" />
+        <argument
+            android:name="screenName"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/ticketsFragment"

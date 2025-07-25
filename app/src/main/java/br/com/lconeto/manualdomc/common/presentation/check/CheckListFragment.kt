@@ -28,7 +28,7 @@ class CheckListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setTitleName(getString(R.string.package_create))
+        setTitleName(args.screenName)
 
         setupCheckList()
         setupObservation()

@@ -53,13 +53,18 @@ class PackagesFragment : Fragment() {
             navigateTo(
                 PackagesFragmentDirections.actionPackagesFragmentToCheckListFragment(
                     checkList = checkList,
-                    checkObservation = checkObservation
+                    checkObservation = checkObservation,
+                    screenName = getString(R.string.package_create)
                 )
             )
         }
         binding.packageSend.root.setOnClickListener {
             val checkList = SendPackageToCGEMS.checkList
-            navigateTo(PackagesFragmentDirections.actionPackagesFragmentToCheckListFragment(checkList))
+            navigateTo(PackagesFragmentDirections.actionPackagesFragmentToCheckListFragment(
+                    checkList = checkList,
+                    screenName = getString(R.string.package_create)
+                )
+            )
         }
     }
 

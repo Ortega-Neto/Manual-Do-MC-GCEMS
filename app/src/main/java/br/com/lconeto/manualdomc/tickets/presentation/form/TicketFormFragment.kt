@@ -86,7 +86,8 @@ class TicketFormFragment : Fragment() {
         if (canCreateModel) {
             copyTextToClipboard(createTextForClipboard())
             val action = TicketFormFragmentDirections.actionTicketFormFragmentToCheckListFragment(
-                checkList = StepByStepTicket.checkList
+                checkList = StepByStepTicket.checkList,
+                screenName = getString(R.string.ticket_create)
             )
             navigateTo(action)
         }
