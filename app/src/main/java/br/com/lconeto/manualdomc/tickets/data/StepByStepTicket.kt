@@ -1,6 +1,8 @@
 package br.com.lconeto.manualdomc.tickets.data
 
+import br.com.lconeto.manualdomc.R
 import br.com.lconeto.manualdomc.common.data.entity.check.CheckList
+import br.com.lconeto.manualdomc.common.data.entity.check.CheckObservation
 
 object StepByStepTicket {
     private const val TITLE = "Passo a passo - criação de ticket"
@@ -24,4 +26,11 @@ object StepByStepTicket {
             STEP_7,
         )
     )
+
+    fun getObservationForTicket(isAuth: Boolean): CheckObservation {
+        val textId = if(isAuth) R.string.ticket_observation_auth else R.string.ticket_observation_email
+        return CheckObservation(
+            textId = textId
+        )
+    }
 }

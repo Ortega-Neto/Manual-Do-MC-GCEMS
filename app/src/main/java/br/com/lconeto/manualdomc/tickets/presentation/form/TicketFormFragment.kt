@@ -87,6 +87,7 @@ class TicketFormFragment : Fragment() {
             copyTextToClipboard(createTextForClipboard())
             val action = TicketFormFragmentDirections.actionTicketFormFragmentToCheckListFragment(
                 checkList = StepByStepTicket.checkList,
+                checkObservation = StepByStepTicket.getObservationForTicket(args.isAuth),
                 screenName = getString(R.string.ticket_create)
             )
             navigateTo(action)

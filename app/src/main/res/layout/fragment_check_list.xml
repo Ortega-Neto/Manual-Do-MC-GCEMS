@@ -41,8 +41,8 @@
         android:orientation="horizontal"
         android:padding="@dimen/margin_16"
         android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/finish_button"
+        app:layout_constraintEnd_toStartOf="@+id/finish_button"
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
@@ -64,5 +64,18 @@
             android:textSize="@dimen/text_16"
             android:textStyle="bold" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/finish_button"
+        android:layout_width="@dimen/margin_0"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_16"
+        android:layout_marginEnd="@dimen/margin_16"
+        android:layout_marginBottom="@dimen/margin_16"
+        android:text="@string/check_list_button"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

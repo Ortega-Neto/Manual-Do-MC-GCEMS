@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
-import br.com.lconeto.manualdomc.R
+import br.com.lconeto.manualdomc.common.domain.extensions.navigateTo
 import br.com.lconeto.manualdomc.common.domain.extensions.setTitleName
 import br.com.lconeto.manualdomc.databinding.FragmentCheckListBinding
 
@@ -32,6 +32,7 @@ class CheckListFragment : Fragment() {
 
         setupCheckList()
         setupObservation()
+        setupListeners()
     }
 
     private fun setupCheckList() {
@@ -48,6 +49,13 @@ class CheckListFragment : Fragment() {
         args.checkObservation?.let {
             binding.textViewCheckAlert.text = getString(it.textId)
             binding.linearLayoutAlert.visibility = View.VISIBLE
+        }
+    }
+
+    private fun setupListeners() {
+        binding.finishButton.setOnClickListener {
+            val action = CheckListFragmentDirections.actionCheckListFragmentToNavHome()
+            navigateTo(action)
         }
     }
 

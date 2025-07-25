@@ -102,6 +102,11 @@
         <argument
             android:name="screenName"
             app:argType="string" />
+        <action
+            android:id="@+id/action_checkListFragment_to_nav_home"
+            app:destination="@id/nav_home"
+            app:popUpTo="@id/nav_home"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/ticketsFragment"
