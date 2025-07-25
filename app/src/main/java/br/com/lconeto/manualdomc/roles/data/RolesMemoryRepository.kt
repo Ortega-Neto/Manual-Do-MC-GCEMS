@@ -2,8 +2,8 @@ package br.com.lconeto.manualdomc.roles.data
 
 import android.content.Context
 import androidx.datastore.preferences.core.stringPreferencesKey
-import br.com.lconeto.manualdomc.common.data.entity.RoleInfo
-import br.com.lconeto.manualdomc.common.data.entity.Roles
+import br.com.lconeto.manualdomc.common.data.entity.role.RoleInfo
+import br.com.lconeto.manualdomc.common.data.entity.role.Roles
 import br.com.lconeto.manualdomc.common.data.preferences.DataStorageRepository
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken

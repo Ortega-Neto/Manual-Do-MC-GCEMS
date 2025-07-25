@@ -4,37 +4,37 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import br.com.lconeto.manualdomc.R
-import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.CHAPLAIN
-import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.FIFTH_PRECEPTOR
-import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.FIRST_BUTLER
-import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.FIRST_COUNSELOR
-import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.FIRST_DEACON
-import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.FIRST_PRECEPTOR
-import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.FOURTH_PRECEPTOR
-import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.HOSPITABLE
-import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.MARSHAL
-import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.MASTER_COUNSELOR
-import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.ORGANIST
-import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.SECOND_BUTLER
-import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.SECOND_COUNSELOR
-import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.SECOND_DEACON
-import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.SECOND_PRECEPTOR
-import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.SECRETARY
-import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.SENTINEL
-import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.SEVENTH_PRECEPTOR
-import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.SIXTH_PRECEPTOR
-import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.SPEAKER
-import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.STANDARD_BEARER
-import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.THIRD_PRECEPTOR
-import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.TREASURER
-import br.com.lconeto.manualdomc.common.data.entity.RoleInfo
+import br.com.lconeto.manualdomc.common.data.entity.role.RoleConstants.CHAPLAIN
+import br.com.lconeto.manualdomc.common.data.entity.role.RoleConstants.FIFTH_PRECEPTOR
+import br.com.lconeto.manualdomc.common.data.entity.role.RoleConstants.FIRST_BUTLER
+import br.com.lconeto.manualdomc.common.data.entity.role.RoleConstants.FIRST_COUNSELOR
+import br.com.lconeto.manualdomc.common.data.entity.role.RoleConstants.FIRST_DEACON
+import br.com.lconeto.manualdomc.common.data.entity.role.RoleConstants.FIRST_PRECEPTOR
+import br.com.lconeto.manualdomc.common.data.entity.role.RoleConstants.FOURTH_PRECEPTOR
+import br.com.lconeto.manualdomc.common.data.entity.role.RoleConstants.HOSPITABLE
+import br.com.lconeto.manualdomc.common.data.entity.role.RoleConstants.MARSHAL
+import br.com.lconeto.manualdomc.common.data.entity.role.RoleConstants.MASTER_COUNSELOR
+import br.com.lconeto.manualdomc.common.data.entity.role.RoleConstants.ORGANIST
+import br.com.lconeto.manualdomc.common.data.entity.role.RoleConstants.SECOND_BUTLER
+import br.com.lconeto.manualdomc.common.data.entity.role.RoleConstants.SECOND_COUNSELOR
+import br.com.lconeto.manualdomc.common.data.entity.role.RoleConstants.SECOND_DEACON
+import br.com.lconeto.manualdomc.common.data.entity.role.RoleConstants.SECOND_PRECEPTOR
+import br.com.lconeto.manualdomc.common.data.entity.role.RoleConstants.SECRETARY
+import br.com.lconeto.manualdomc.common.data.entity.role.RoleConstants.SENTINEL
+import br.com.lconeto.manualdomc.common.data.entity.role.RoleConstants.SEVENTH_PRECEPTOR
+import br.com.lconeto.manualdomc.common.data.entity.role.RoleConstants.SIXTH_PRECEPTOR
+import br.com.lconeto.manualdomc.common.data.entity.role.RoleConstants.SPEAKER
+import br.com.lconeto.manualdomc.common.data.entity.role.RoleConstants.STANDARD_BEARER
+import br.com.lconeto.manualdomc.common.data.entity.role.RoleConstants.THIRD_PRECEPTOR
+import br.com.lconeto.manualdomc.common.data.entity.role.RoleConstants.TREASURER
+import br.com.lconeto.manualdomc.common.data.entity.role.RoleInfo
+import br.com.lconeto.manualdomc.common.domain.extensions.setTitleName
 import br.com.lconeto.manualdomc.common.domain.extensions.toastMessage
-import br.com.lconeto.manualdomc.common.presentation.LoadingDialog
+import br.com.lconeto.manualdomc.common.presentation.loading.LoadingDialog
 import br.com.lconeto.manualdomc.databinding.ComponentEditRoleItemBinding
 import br.com.lconeto.manualdomc.databinding.FragmentEditRolesBinding
 import br.com.lconeto.manualdomc.roles.data.getRoleByAcronym
@@ -69,6 +69,7 @@ class EditRolesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setTitleName(getString(R.string.home_roles))
 
         loadingDialog = LoadingDialog(
             context = requireContext(),

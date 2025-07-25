@@ -3,7 +3,7 @@ package br.com.lconeto.manualdomc.roles.presentation
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import br.com.lconeto.manualdomc.common.data.entity.RoleInfo
+import br.com.lconeto.manualdomc.common.data.entity.role.RoleInfo
 import br.com.lconeto.manualdomc.roles.data.RolesMemoryRepository
 import kotlinx.coroutines.flow.Flow
 

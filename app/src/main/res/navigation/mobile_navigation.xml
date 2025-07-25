@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_nav_home_to_editRolesFragment"
             app:destination="@id/editRolesFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_packagesFragment"
+            app:destination="@id/packagesFragment" />
     </fragment>
 
     <fragment
@@ -69,6 +72,12 @@
     <fragment
         android:id="@+id/editRolesFragment"
         android:name="br.com.lconeto.manualdomc.roles.presentation.EditRolesFragment"
-        android:label="EditRolesFragment" />
+        android:label="EditRolesFragment"
+        tools:layout="@layout/fragment_edit_roles" />
+    <fragment
+        android:id="@+id/packagesFragment"
+        android:name="br.com.lconeto.manualdomc.packages.presentation.PackagesFragment"
+        android:label="PackagesFragment"
+        tools:layout="@layout/fragment_packages"/>
 
 </navigation>

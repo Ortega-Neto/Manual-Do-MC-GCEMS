@@ -1,4 +1,4 @@
-package br.com.lconeto.manualdomc.common.data.entity
+package br.com.lconeto.manualdomc.common.data.entity.role
 
 data class Roles(
     var listOfRoles: List<RoleInfo> = listOf(

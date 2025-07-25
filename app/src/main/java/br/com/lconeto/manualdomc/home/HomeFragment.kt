@@ -47,7 +47,9 @@ class HomeFragment : Fragment() {
         binding.homeRoles.root.setOnClickListener {
             navigateTo(HomeFragmentDirections.actionNavHomeToEditRolesFragment())
         }
-        binding.homePackages.root.setOnClickListener { }
+        binding.homePackages.root.setOnClickListener {
+            navigateTo(HomeFragmentDirections.actionNavHomeToPackagesFragment())
+        }
         binding.homeTickets.root.setOnClickListener { }
     }
 

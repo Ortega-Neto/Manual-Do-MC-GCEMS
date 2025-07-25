@@ -46,6 +46,7 @@
     <string name="label_placeholder">placeholder</string>
     <string name="label_role_name">Cargo</string>
     <string name="label_name">Nome</string>
+    <string name="label_check_list_item">Checklist Item</string>
 
     <!--  Preface  -->
     <string name="preface_title">Prefácio</string>

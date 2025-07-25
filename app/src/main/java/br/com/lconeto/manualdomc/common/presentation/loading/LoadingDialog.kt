@@ -1,4 +1,4 @@
-package br.com.lconeto.manualdomc.common.presentation
+package br.com.lconeto.manualdomc.common.presentation.loading
 
 import android.content.Context
 import androidx.core.content.ContextCompat

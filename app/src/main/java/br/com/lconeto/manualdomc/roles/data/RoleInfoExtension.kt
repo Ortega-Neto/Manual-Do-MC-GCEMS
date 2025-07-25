@@ -1,6 +1,6 @@
 package br.com.lconeto.manualdomc.roles.data
 
-import br.com.lconeto.manualdomc.common.data.entity.RoleInfo
+import br.com.lconeto.manualdomc.common.data.entity.role.RoleInfo
 
 fun List<RoleInfo>.getRoleByAcronym(acronym: String): RoleInfo {
     return this.find { it.acronym == acronym }!!
