@@ -33,10 +33,13 @@ class HomeFragment : Fragment() {
 
     private fun populateButtons() {
         binding.homeMeeting.textContactTitle.text = getString(R.string.home_meetings)
+        binding.homeMeeting.imageContactTitle.setImageResource(R.drawable.ic_meeting)
         binding.homeRoles.textContactTitle.text = getString(R.string.home_roles)
         binding.homeRoles.imageContactTitle.setImageResource(R.drawable.ic_role)
         binding.homePackages.textContactTitle.text = getString(R.string.home_packages)
+        binding.homePackages.imageContactTitle.setImageResource(R.drawable.ic_package)
         binding.homeTickets.textContactTitle.text = getString(R.string.home_tickets)
+        binding.homeTickets.imageContactTitle.setImageResource(R.drawable.ic_ticket)
     }
 
     private fun setupListeners() {
