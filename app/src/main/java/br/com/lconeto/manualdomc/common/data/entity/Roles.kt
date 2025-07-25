@@ -7,10 +7,6 @@ data class Roles(
             isNecessaryToStartReunion = true
         ),
         RoleInfo(
-            acronym = RoleConstants.MASTER_COUNSELOR,
-            isNecessaryToStartReunion = true
-        ),
-        RoleInfo(
             acronym = RoleConstants.FIRST_COUNSELOR,
             isNecessaryToStartReunion = true
         ),

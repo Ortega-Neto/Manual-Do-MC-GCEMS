@@ -34,6 +34,9 @@
     <string name="bank_details_email_adjunt_secretary">grandesecretarioadj@demolayms.org</string>
     <string name="bank_details_alert_message">Inclua sempre o número do pacote na descrição ao pagar e envie o comprovante para os GCEMS pelos e-mails acima.</string>
 
+    <!--  Dialog  -->
+    <string name="dialog_loading_roles">Carregando Cargos</string>
+    <string name="dialog_saing_roles">Salvando Cargos</string>
 
     <!--  Labels  -->
     <string name="label_project_name">Project Name</string>
@@ -50,5 +53,6 @@
     <!--  Roles  -->
     <string name="roles_button_roles_save">Salvar Cargos</string>
     <string name="roles_error_missing_role">Cargo obrigatório para reunião</string>
+    <string name="roles_updated_roles">Cargos atualizados!</string>
 
 </resources>

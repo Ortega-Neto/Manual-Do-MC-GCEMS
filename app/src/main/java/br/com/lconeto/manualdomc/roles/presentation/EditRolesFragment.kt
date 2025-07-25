@@ -4,37 +4,41 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import br.com.lconeto.manualdomc.R
-import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.CHAPLAIN_POSITION
-import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.FIFTH_PRECEPTOR_POSITION
-import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.FIRST_BUTLER_POSITION
-import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.FIRST_COUNSELOR_POSITION
-import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.FIRST_DEACON_POSITION
-import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.FIRST_PRECEPTOR_POSITION
-import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.FOURTH_PRECEPTOR_POSITION
-import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.HOSPITABLE_POSITION
-import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.MARSHAL_POSITION
-import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.MASTER_COUNSELOR_POSITION
-import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.ORGANIST_POSITION
-import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.SECOND_BUTLER_POSITION
-import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.SECOND_COUNSELOR_POSITION
-import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.SECOND_DEACON_POSITION
-import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.SECOND_PRECEPTOR_POSITION
-import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.SECRETARY_POSITION
-import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.SENTINEL_POSITION
-import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.SEVENTH_PRECEPTOR_POSITION
-import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.SIXTH_PRECEPTOR_POSITION
-import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.SPEAKER_POSITION
-import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.STANDARD_BEARER_POSITION
-import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.THIRD_PRECEPTOR_POSITION
-import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.TREASURER_POSITION
+import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.CHAPLAIN
+import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.FIFTH_PRECEPTOR
+import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.FIRST_BUTLER
+import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.FIRST_COUNSELOR
+import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.FIRST_DEACON
+import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.FIRST_PRECEPTOR
+import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.FOURTH_PRECEPTOR
+import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.HOSPITABLE
+import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.MARSHAL
+import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.MASTER_COUNSELOR
+import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.ORGANIST
+import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.SECOND_BUTLER
+import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.SECOND_COUNSELOR
+import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.SECOND_DEACON
+import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.SECOND_PRECEPTOR
+import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.SECRETARY
+import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.SENTINEL
+import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.SEVENTH_PRECEPTOR
+import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.SIXTH_PRECEPTOR
+import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.SPEAKER
+import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.STANDARD_BEARER
+import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.THIRD_PRECEPTOR
+import br.com.lconeto.manualdomc.common.data.entity.RoleConstants.TREASURER
 import br.com.lconeto.manualdomc.common.data.entity.RoleInfo
+import br.com.lconeto.manualdomc.common.domain.extensions.toastMessage
 import br.com.lconeto.manualdomc.common.presentation.LoadingDialog
 import br.com.lconeto.manualdomc.databinding.ComponentEditRoleItemBinding
 import br.com.lconeto.manualdomc.databinding.FragmentEditRolesBinding
+import br.com.lconeto.manualdomc.roles.data.getRoleByAcronym
+import br.com.lconeto.manualdomc.roles.data.updateOccupantName
 import com.google.android.material.textfield.TextInputLayout
 import kotlinx.coroutines.launch
 
@@ -68,10 +72,11 @@ class EditRolesFragment : Fragment() {
 
         loadingDialog = LoadingDialog(
             context = requireContext(),
-            "carregando"
+            getString(R.string.dialog_loading_roles)
         )
         loadingDialog.show()
         getRoles()
+        setupSaveButton()
     }
 
     private fun getRoles() {
@@ -79,7 +84,6 @@ class EditRolesFragment : Fragment() {
             editRolesViewModel.getRoles().collect {
                 roles = it
                 setupRolesContent()
-                setupSaveButton()
 
                 loadingDialog.dismiss()
             }
@@ -87,34 +91,35 @@ class EditRolesFragment : Fragment() {
     }
 
     private fun setupRolesContent() {
-        setupRoleItem(binding.roleMc, roles[MASTER_COUNSELOR_POSITION])
-        setupRoleItem(binding.role1c, roles[FIRST_COUNSELOR_POSITION])
-        setupRoleItem(binding.role2c, roles[SECOND_COUNSELOR_POSITION])
-        setupRoleItem(binding.roleCap, roles[CHAPLAIN_POSITION])
-        setupRoleItem(binding.roleMcr, roles[MARSHAL_POSITION])
-        setupRoleItem(binding.role1d, roles[FIRST_DEACON_POSITION])
-        setupRoleItem(binding.role2d, roles[SECOND_DEACON_POSITION])
-        setupRoleItem(binding.role1m, roles[FIRST_BUTLER_POSITION])
-        setupRoleItem(binding.role2m, roles[SECOND_BUTLER_POSITION])
-        setupRoleItem(binding.rolePb, roles[STANDARD_BEARER_POSITION])
-        setupRoleItem(binding.roleEsc, roles[SECRETARY_POSITION])
-        setupRoleItem(binding.roleSen, roles[SENTINEL_POSITION])
-        setupRoleItem(binding.roleOr, roles[SPEAKER_POSITION])
-        setupRoleItem(binding.roleTes, roles[TREASURER_POSITION])
-        setupRoleItem(binding.roleHos, roles[HOSPITABLE_POSITION])
-        setupRoleItem(binding.roleOrg, roles[ORGANIST_POSITION])
-        setupRoleItem(binding.role1p, roles[FIRST_PRECEPTOR_POSITION])
-        setupRoleItem(binding.role2p, roles[SECOND_PRECEPTOR_POSITION])
-        setupRoleItem(binding.role3p, roles[THIRD_PRECEPTOR_POSITION])
-        setupRoleItem(binding.role4p, roles[FOURTH_PRECEPTOR_POSITION])
-        setupRoleItem(binding.role5p, roles[FIFTH_PRECEPTOR_POSITION])
-        setupRoleItem(binding.role6p, roles[SIXTH_PRECEPTOR_POSITION])
-        setupRoleItem(binding.role7p, roles[SEVENTH_PRECEPTOR_POSITION])
+        setupRoleItem(binding.roleMc, roles.getRoleByAcronym(MASTER_COUNSELOR))
+        setupRoleItem(binding.role1c, roles.getRoleByAcronym(FIRST_COUNSELOR))
+        setupRoleItem(binding.role2c, roles.getRoleByAcronym(SECOND_COUNSELOR))
+        setupRoleItem(binding.roleCap, roles.getRoleByAcronym(CHAPLAIN))
+        setupRoleItem(binding.roleMcr, roles.getRoleByAcronym(MARSHAL))
+        setupRoleItem(binding.role1d, roles.getRoleByAcronym(FIRST_DEACON))
+        setupRoleItem(binding.role2d, roles.getRoleByAcronym(SECOND_DEACON))
+        setupRoleItem(binding.role1m, roles.getRoleByAcronym(FIRST_BUTLER))
+        setupRoleItem(binding.role2m, roles.getRoleByAcronym(SECOND_BUTLER))
+        setupRoleItem(binding.rolePb, roles.getRoleByAcronym(STANDARD_BEARER))
+        setupRoleItem(binding.roleEsc, roles.getRoleByAcronym(SECRETARY))
+        setupRoleItem(binding.roleSen, roles.getRoleByAcronym(SENTINEL))
+        setupRoleItem(binding.roleOr, roles.getRoleByAcronym(SPEAKER))
+        setupRoleItem(binding.roleTes, roles.getRoleByAcronym(TREASURER))
+        setupRoleItem(binding.roleHos, roles.getRoleByAcronym(HOSPITABLE))
+        setupRoleItem(binding.roleOrg, roles.getRoleByAcronym(ORGANIST))
+        setupRoleItem(binding.role1p, roles.getRoleByAcronym(FIRST_PRECEPTOR))
+        setupRoleItem(binding.role2p, roles.getRoleByAcronym(SECOND_PRECEPTOR))
+        setupRoleItem(binding.role3p, roles.getRoleByAcronym(THIRD_PRECEPTOR))
+        setupRoleItem(binding.role4p, roles.getRoleByAcronym(FOURTH_PRECEPTOR))
+        setupRoleItem(binding.role5p, roles.getRoleByAcronym(FIFTH_PRECEPTOR))
+        setupRoleItem(binding.role6p, roles.getRoleByAcronym(SIXTH_PRECEPTOR))
+        setupRoleItem(binding.role7p, roles.getRoleByAcronym(SEVENTH_PRECEPTOR))
     }
 
     private fun setupRoleItem(itemBinding: ComponentEditRoleItemBinding, role: RoleInfo) {
         itemBinding.textViewAcronym.text = role.acronym
         itemBinding.textInputLayoutName.hint = "Nome do ${role.acronym}"
+        itemBinding.editTextName.setText(role.occupantName)
 
         roleInputMap[role] = itemBinding.textInputLayoutName
     }
@@ -129,9 +134,10 @@ class EditRolesFragment : Fragment() {
         canSaveRoles = true
         val missingRoles = mutableListOf<String>()
 
-        var index = 0
         roleInputMap.forEach { (roleInfo, textInputLayout) ->
             val editText = textInputLayout.editText
+            roles.updateOccupantName(roleInfo.acronym, editText?.text.toString())
+
             if (roleInfo.isNecessaryToStartReunion) {
                 if (editText?.text.isNullOrBlank()) {
                     missingRoles.add(roleInfo.acronym)
@@ -141,9 +147,7 @@ class EditRolesFragment : Fragment() {
                 } else {
                     textInputLayout.error = null
                     textInputLayout.isErrorEnabled = false
-                    roles[index].occupantName = roleInfo.occupantName
                 }
-                index++
             }
         }
 
@@ -154,7 +158,16 @@ class EditRolesFragment : Fragment() {
 
     private fun saveRoles() {
         lifecycleScope.launch {
-            editRolesViewModel.saveRoles(roles)
+            loadingDialog = LoadingDialog(
+                context = requireContext(),
+                getString(R.string.dialog_saing_roles)
+            )
+            loadingDialog.show()
+            editRolesViewModel.saveRoles(roles).also {
+                loadingDialog.dismiss()
+                toastMessage(getString(R.string.roles_updated_roles))
+                getRoles()
+            }
         }
     }
 }
