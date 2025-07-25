@@ -78,6 +78,24 @@
         android:id="@+id/packagesFragment"
         android:name="br.com.lconeto.manualdomc.packages.presentation.PackagesFragment"
         android:label="PackagesFragment"
-        tools:layout="@layout/fragment_packages"/>
+        tools:layout="@layout/fragment_packages">
+        <action
+            android:id="@+id/action_packagesFragment_to_checkListFragment"
+            app:destination="@id/checkListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/checkListFragment"
+        android:name="br.com.lconeto.manualdomc.common.presentation.check.CheckListFragment"
+        android:label="CheckListFragment"
+        tools:layout="@layout/fragment_check_list" >
+        <argument
+            android:name="checkList"
+            app:argType="br.com.lconeto.manualdomc.common.data.entity.check.CheckList" />
+        <argument
+            android:name="checkObservation"
+            app:argType="br.com.lconeto.manualdomc.common.data.entity.check.CheckObservation"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
 
 </navigation>

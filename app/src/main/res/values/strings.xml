@@ -56,4 +56,9 @@
     <string name="roles_error_missing_role">Cargo obrigatório para reunião</string>
     <string name="roles_updated_roles">Cargos atualizados!</string>
 
+    <!--  Package  -->
+    <string name="package_create">Criação de Pacotes</string>
+    <string name="package_send">Envio de pacote ao GCEMS</string>
+    <string name="package_create_alert">Guarde o número do pacote, pois ele pode conter múltiplas ações. Pacotes com status \"Em Edição\" podem ser alterados, mas todas as modificações devem ser feitas antes da conclusão. O pacote e seu pagamento devem estar prontos 7 dias antes da cerimônia.</string>
+
 </resources>

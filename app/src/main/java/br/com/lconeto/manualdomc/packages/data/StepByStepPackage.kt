@@ -1,9 +1,11 @@
 package br.com.lconeto.manualdomc.packages.data
 
+import br.com.lconeto.manualdomc.R
 import br.com.lconeto.manualdomc.common.data.entity.check.CheckList
+import br.com.lconeto.manualdomc.common.data.entity.check.CheckObservation
 
 object StepByStepPackage {
-    private const val TITLE = "Passo a passo criação de pacote"
+    private const val TITLE = "Passo a passo - criação de pacote"
     private const val STEP_1 = "Abrir o SISDM"
     private const val STEP_2 = "Ir em Secretaria"
     private const val STEP_3 = "Procurar por Gestão > Pacotes"
@@ -31,5 +33,9 @@ object StepByStepPackage {
             STEP_10,
             STEP_11
         )
+    )
+
+    val checkObservation = CheckObservation(
+        textId = R.string.package_create_alert
     )
 }

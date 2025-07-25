@@ -4,7 +4,6 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class CheckList(
-    var tittle: String? = null,
-    val listItem: List<String>
+data class CheckObservation(
+    val textId: Int
 ) : Parcelable
