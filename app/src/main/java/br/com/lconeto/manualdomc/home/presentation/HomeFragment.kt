@@ -5,9 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.NavDirections
-import androidx.navigation.fragment.findNavController
 import br.com.lconeto.manualdomc.R
+import br.com.lconeto.manualdomc.common.domain.extensions.navigateTo
 import br.com.lconeto.manualdomc.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -50,12 +49,9 @@ class HomeFragment : Fragment() {
         binding.homePackages.root.setOnClickListener {
             navigateTo(HomeFragmentDirections.actionNavHomeToPackagesFragment())
         }
-        binding.homeTickets.root.setOnClickListener { }
-    }
-
-    private fun navigateTo(action: NavDirections) {
-        val navController = findNavController()
-        navController.navigate(action)
+        binding.homeTickets.root.setOnClickListener {
+            navigateTo(HomeFragmentDirections.actionNavHomeToTicketsFragment())
+        }
     }
 
     override fun onDestroyView() {

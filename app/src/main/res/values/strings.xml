@@ -47,6 +47,15 @@
     <string name="label_role_name">Cargo</string>
     <string name="label_name">Nome</string>
     <string name="label_check_list_item">Checklist Item</string>
+    <string name="label_ticket_chapter">Capítulo</string>
+    <string name="label_ticket_chapter_number">Número do Capítulo</string>
+    <string name="label_ticket_store">Loja</string>
+    <string name="label_ticket_store_number">Número da Loja</string>
+    <string name="label_ticket_day">Dia</string>
+    <string name="label_ticket_hour">Horário</string>
+    <string name="label_ticket_package">Pacote</string>
+    <string name="label_ticket_MC">Nome do MC</string>
+    <string name="label_ticket_id">Id</string>
 
     <!--  Preface  -->
     <string name="preface_title">Prefácio</string>
@@ -60,5 +69,13 @@
     <string name="package_create">Criação de Pacotes</string>
     <string name="package_send">Envio de pacote ao GCEMS</string>
     <string name="package_create_alert">Guarde o número do pacote, pois ele pode conter múltiplas ações. Pacotes com status \"Em Edição\" podem ser alterados, mas todas as modificações devem ser feitas antes da conclusão. O pacote e seu pagamento devem estar prontos 7 dias antes da cerimônia.</string>
+
+    <!--  Tickets  -->
+    <string name="ticket_auth">Modelo de Ticket - Autorização GCMES</string>
+    <string name="ticket_auth_tittle">Modelo Autorização GCMES</string>
+    <string name="ticket_email">Modelo Atualização de Email</string>
+    <string name="ticket_email_tittle">Ticket - Atualização de Email</string>
+    <string name="ticket_button_ticket_copy_text">Copiar texto do modelo</string>
+    <string name="ticket_error_missing_input">Campo obrigatório para modelo</string>
 
 </resources>

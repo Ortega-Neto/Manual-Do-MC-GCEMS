@@ -5,9 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.NavDirections
-import androidx.navigation.fragment.findNavController
 import br.com.lconeto.manualdomc.R
+import br.com.lconeto.manualdomc.common.domain.extensions.navigateTo
 import br.com.lconeto.manualdomc.common.domain.extensions.setTitleName
 import br.com.lconeto.manualdomc.databinding.FragmentPackagesBinding
 import br.com.lconeto.manualdomc.packages.data.SendPackageToCGEMS
@@ -62,11 +61,6 @@ class PackagesFragment : Fragment() {
             val checkList = SendPackageToCGEMS.checkList
             navigateTo(PackagesFragmentDirections.actionPackagesFragmentToCheckListFragment(checkList))
         }
-    }
-
-    private fun navigateTo(action: NavDirections) {
-        val navController = findNavController()
-        navController.navigate(action)
     }
 
     override fun onDestroyView() {

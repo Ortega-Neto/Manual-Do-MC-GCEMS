@@ -30,16 +30,16 @@ class BankDetailsFragment : Fragment() {
 
     private fun setupUi() {
         binding.btnCopyPix.setOnClickListener {
-            it.copyTextToClipboard(getString(R.string.bank_details_pix).extractOnlyNumbers())
+            copyTextToClipboard(getString(R.string.bank_details_pix).extractOnlyNumbers())
         }
         binding.btnCopyAccount.setOnClickListener {
-            it.copyTextToClipboard(getBankAccountForClipboard())
+            copyTextToClipboard(getBankAccountForClipboard())
         }
         binding.btnCopyEmailSecretary.setOnClickListener {
-            it.copyTextToClipboard(getString(R.string.bank_details_email_secretary))
+            copyTextToClipboard(getString(R.string.bank_details_email_secretary))
         }
         binding.btnCopyEmailAdjuntSecretary.setOnClickListener {
-            it.copyTextToClipboard(getString(R.string.bank_details_email_adjunt_secretary))
+            copyTextToClipboard(getString(R.string.bank_details_email_adjunt_secretary))
         }
     }
 

@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_nav_home_to_packagesFragment"
             app:destination="@id/packagesFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_ticketsFragment"
+            app:destination="@id/ticketsFragment" />
     </fragment>
 
     <fragment
@@ -96,6 +99,28 @@
             app:argType="br.com.lconeto.manualdomc.common.data.entity.check.CheckObservation"
             app:nullable="true"
             android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/ticketsFragment"
+        android:name="br.com.lconeto.manualdomc.tickets.presentation.TicketsFragment"
+        android:label="TicketsFragment"
+        tools:layout="@layout/fragment_tickets" >
+        <action
+            android:id="@+id/action_ticketsFragment_to_ticketFormFragment"
+            app:destination="@id/ticketFormFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ticketFormFragment"
+        android:name="br.com.lconeto.manualdomc.tickets.presentation.form.TicketFormFragment"
+        android:label="TicketFormFragment"
+        tools:layout="@layout/fragment_ticket_form" >
+        <argument
+            android:name="isAuth"
+            app:argType="boolean"
+            android:defaultValue="true" />
+        <action
+            android:id="@+id/action_ticketFormFragment_to_checkListFragment"
+            app:destination="@id/checkListFragment" />
     </fragment>
 
 </navigation>

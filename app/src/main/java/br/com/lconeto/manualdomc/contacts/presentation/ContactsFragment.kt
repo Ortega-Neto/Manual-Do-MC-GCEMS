@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
+import br.com.lconeto.manualdomc.common.domain.extensions.navigateTo
 import br.com.lconeto.manualdomc.contacts.data.contactLists.ContactCategory
 import br.com.lconeto.manualdomc.databinding.FragmentContactsBinding
 
@@ -70,7 +70,7 @@ class ContactsFragment : Fragment() {
         val action = ContactsFragmentDirections.actionNavContactsToShowContactsFragment(
             contactCategory = contactCategory
         )
-        findNavController().navigate(action)
+        navigateTo(action)
     }
 
     override fun onDestroyView() {

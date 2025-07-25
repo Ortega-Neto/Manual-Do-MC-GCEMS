@@ -15,6 +15,7 @@ datastore-preferences = "1.1.7"
 gson = "2.10.1"
 
 sweetalert-dialog = "1.6.2"
+maskededittext = "4.0.7"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -31,6 +32,7 @@ androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navi
 androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigation" }
 androidx-datastore-preferences = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "datastore-preferences" }
 sweetalert-dialog = { group = "com.github.f0ris.sweetalert", name = "library", version.ref = "sweetalert-dialog" }
+maskededittext = { group = "io.github.vicmikhailau", name = "MaskedEditText", version.ref = "maskededittext" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

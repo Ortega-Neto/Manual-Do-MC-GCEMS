@@ -54,6 +54,7 @@ dependencies {
     implementation(libs.androidx.datastore.preferences)
 
     implementation(libs.sweetalert.dialog)
+    implementation(libs.maskededittext)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
