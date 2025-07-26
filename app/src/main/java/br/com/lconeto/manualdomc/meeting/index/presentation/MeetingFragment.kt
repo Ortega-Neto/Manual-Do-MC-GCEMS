@@ -12,12 +12,12 @@ import br.com.lconeto.manualdomc.common.domain.extensions.navigateTo
 import br.com.lconeto.manualdomc.common.domain.extensions.setTitleName
 import br.com.lconeto.manualdomc.databinding.FragmentMeetingBinding
 import br.com.lconeto.manualdomc.meeting.check.data.MeetingCheckListType
+import br.com.lconeto.manualdomc.meeting.check.presentation.MeetingCheckListDialogFragment
+import br.com.lconeto.manualdomc.meeting.check.presentation.MeetingCheckListTypeSelected
 import br.com.lconeto.manualdomc.meeting.index.data.types.MeetingClassRoomOrganization
 import br.com.lconeto.manualdomc.meeting.index.data.types.MeetingElevation
 import br.com.lconeto.manualdomc.meeting.index.data.types.MeetingInitialization
 import br.com.lconeto.manualdomc.meeting.index.data.types.MeetingPublic
-import br.com.lconeto.manualdomc.meeting.check.presentation.MeetingCheckListDialogFragment
-import br.com.lconeto.manualdomc.meeting.check.presentation.MeetingCheckListTypeSelected
 
 class MeetingFragment : Fragment() {
     private var _binding: FragmentMeetingBinding? = null
@@ -51,8 +51,8 @@ class MeetingFragment : Fragment() {
         binding.meetingRoles.imageContactTitle.setImageResource(R.drawable.ic_role)
         binding.meetingForm.textContactTitle.text = getString(R.string.meeting_follow)
         binding.meetingForm.imageContactTitle.setImageResource(R.drawable.ic_meeting_follow)
-        binding.meetingRegistre.textContactTitle.text = getString(R.string.meeting_register)
-        binding.meetingRegistre.imageContactTitle.setImageResource(R.drawable.ic_meeting_register)
+        binding.meetingRegister.textContactTitle.text = getString(R.string.meeting_register)
+        binding.meetingRegister.imageContactTitle.setImageResource(R.drawable.ic_meeting_register)
     }
 
     private fun setupListeners() {
@@ -72,6 +72,11 @@ class MeetingFragment : Fragment() {
         binding.meetingForm.root.setOnClickListener {
             navigateTo(
                 action = MeetingFragmentDirections.actionMeetingFragmentToMeetingFormFragment()
+            )
+        }
+        binding.meetingRegister.root.setOnClickListener {
+            navigateTo(
+                action = MeetingFragmentDirections.actionMeetingFragmentToMeetingRegisterListFragment()
             )
         }
     }

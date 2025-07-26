@@ -55,6 +55,19 @@ class MeetingMemoryRepository(
         }
     }
 
+    suspend fun deleteMeeting(meeting: MeetingData) {
+        val currentMeetings = getMeetings().first().toMutableList()
+
+        val initialSize = currentMeetings.size
+        currentMeetings.removeIf {
+            it.id == meeting.id
+        }
+
+        if (currentMeetings.size < initialSize) {
+            saveMeetings(currentMeetings)
+        }
+    }
+
     companion object {
         private val MEETING_MAP_KEY = stringPreferencesKey("meetings_map_json")
     }

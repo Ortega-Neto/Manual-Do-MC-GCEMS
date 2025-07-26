@@ -145,6 +145,9 @@
         <action
             android:id="@+id/action_meetingFragment_to_meetingFormFragment"
             app:destination="@id/meetingFormFragment" />
+        <action
+            android:id="@+id/action_meetingFragment_to_meetingRegisterListFragment"
+            app:destination="@id/meetingRegisterListFragment" />
     </fragment>
     <fragment
         android:id="@+id/meetingTipsFragment"
@@ -189,5 +192,14 @@
             app:destination="@id/nav_home"
             app:popUpTo="@id/nav_home"
             app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/meetingRegisterListFragment"
+        android:name="br.com.lconeto.manualdomc.meeting.register.presentation.MeetingRegisterListFragment"
+        android:label="MeetingRegisterListFragment"
+        tools:layout="@layout/fragment_meeting_register_list" >
+        <action
+            android:id="@+id/action_meetingRegisterListFragment_to_meetingFragmentReport"
+            app:destination="@id/meetingFragmentReport" />
     </fragment>
 </navigation>

@@ -139,5 +139,9 @@
     <string name="meeting_report_button_save">Salvar Reunião</string>
     <string name="meeting_report_button_copy">Copiar Reunião</string>
     <string name="meeting_report_saving_meeting">Salvando Reunião</string>
+    <string name="meeting_register_tittle">Reuniões Registradas</string>
+    <string name="meeting_register_delete">Deletar reunião</string>
+    <string name="meeting_register_searching">Buscando reuniões</string>
+    <string name="meeting_register_deleting">Deletando reunião</string>
 
 </resources>

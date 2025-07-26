@@ -9,7 +9,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.withContext
 
-class MeetingReportViewModel(
+class MeetingMemoryViewModel(
     private val meetingMemoryRepository: MeetingMemoryRepository
 ) : ViewModel() {
 
@@ -19,9 +19,15 @@ class MeetingReportViewModel(
         }
     }
 
-    suspend fun getMeeting(): Flow<List<MeetingData>> {
+    suspend fun getMeetings(): Flow<List<MeetingData>> {
         return withContext(Dispatchers.IO) {
             return@withContext meetingMemoryRepository.getMeetings()
+        }
+    }
+
+    suspend fun deleteMeeting(meeting: MeetingData) {
+        withContext(Dispatchers.IO) {
+            meetingMemoryRepository.deleteMeeting(meeting)
         }
     }
 
@@ -30,9 +36,9 @@ class MeetingReportViewModel(
     ) : ViewModelProvider.Factory {
 
         override fun <T : ViewModel> create(modelClass: Class<T>): T {
-            if (modelClass.isAssignableFrom(MeetingReportViewModel::class.java)) {
+            if (modelClass.isAssignableFrom(MeetingMemoryViewModel::class.java)) {
                 val repository = MeetingMemoryRepository(context)
-                return MeetingReportViewModel(repository) as T
+                return MeetingMemoryViewModel(repository) as T
             }
             throw IllegalArgumentException("Unknown ViewModel class")
         }

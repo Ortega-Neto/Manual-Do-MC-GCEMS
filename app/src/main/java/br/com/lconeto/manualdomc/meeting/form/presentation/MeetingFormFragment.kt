@@ -14,6 +14,7 @@ import br.com.lconeto.manualdomc.common.domain.extensions.navigateTo
 import br.com.lconeto.manualdomc.common.domain.extensions.toStringRoles
 import br.com.lconeto.manualdomc.common.domain.extensions.toastMessage
 import br.com.lconeto.manualdomc.databinding.FragmentMeetingFormBinding
+import br.com.lconeto.manualdomc.meeting.form.presentation.adapter.AgendaAdapter
 import br.com.lconeto.manualdomc.meeting.index.data.MeetingData
 import com.google.android.material.textfield.TextInputLayout
 import com.vicmikhailau.maskededittext.MaskedEditText

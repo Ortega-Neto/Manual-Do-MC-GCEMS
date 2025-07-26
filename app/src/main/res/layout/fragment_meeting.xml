@@ -50,7 +50,7 @@
             android:layout_marginTop="@dimen/margin_24" />
 
         <include
-            android:id="@+id/meeting_registre"
+            android:id="@+id/meeting_register"
             layout="@layout/component_card_image_name"
             android:layout_width="@dimen/margin_0"
             android:layout_height="wrap_content"

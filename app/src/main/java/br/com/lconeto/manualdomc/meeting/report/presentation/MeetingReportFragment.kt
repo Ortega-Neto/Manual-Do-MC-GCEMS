@@ -13,9 +13,9 @@ import br.com.lconeto.manualdomc.R
 import br.com.lconeto.manualdomc.common.domain.extensions.copyTextToClipboard
 import br.com.lconeto.manualdomc.common.domain.extensions.navigateTo
 import br.com.lconeto.manualdomc.common.presentation.loading.LoadingDialog
-import br.com.lconeto.manualdomc.common.presentation.meeting.MeetingReportViewModel
+import br.com.lconeto.manualdomc.common.presentation.meeting.MeetingMemoryViewModel
 import br.com.lconeto.manualdomc.databinding.FragmentMeetingReportBinding
-import br.com.lconeto.manualdomc.meeting.form.presentation.AgendaAdapter
+import br.com.lconeto.manualdomc.meeting.form.presentation.adapter.AgendaAdapter
 import kotlinx.coroutines.launch
 
 class MeetingReportFragment : Fragment() {
@@ -23,11 +23,11 @@ class MeetingReportFragment : Fragment() {
     private val binding get() = _binding!!
     private val args: MeetingReportFragmentArgs by navArgs()
 
-    private val meetingReportViewModel by lazy {
+    private val meetingMemoryViewModel by lazy {
         ViewModelProvider(
             this,
-            MeetingReportViewModel.Factory(requireContext())
-        )[MeetingReportViewModel::class.java]
+            MeetingMemoryViewModel.Factory(requireContext())
+        )[MeetingMemoryViewModel::class.java]
     }
 
     override fun onCreateView(
@@ -78,7 +78,7 @@ class MeetingReportFragment : Fragment() {
                         getString(R.string.meeting_report_saving_meeting)
                     )
                     loadingDialog.show()
-                    meetingReportViewModel.saveMeeting(args.meetingData).also {
+                    meetingMemoryViewModel.saveMeeting(args.meetingData).also {
                         loadingDialog.dismiss()
                         navigateTo(
                             action = MeetingReportFragmentDirections.actionMeetingFragmentReportToNavHome()
