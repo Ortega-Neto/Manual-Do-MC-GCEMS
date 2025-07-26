@@ -32,7 +32,7 @@
 
     <fragment
         android:id="@+id/nav_contacts"
-        android:name="br.com.lconeto.manualdomc.contacts.presentation.ContactsFragment"
+        android:name="br.com.lconeto.manualdomc.contacts.index.presentation.ContactsFragment"
         android:label="@string/menu_contacts"
         tools:layout="@layout/fragment_contacts" >
         <action
@@ -42,7 +42,7 @@
 
     <fragment
         android:id="@+id/nav_projects"
-        android:name="br.com.lconeto.manualdomc.projects.presentation.ProjectsFragment"
+        android:name="br.com.lconeto.manualdomc.projects.index.presentation.ProjectsFragment"
         android:label="@string/menu_projects"
         tools:layout="@layout/fragment_projects">
         <action
@@ -52,22 +52,22 @@
 
     <fragment
         android:id="@+id/showProjectFragment"
-        android:name="br.com.lconeto.manualdomc.projects.presentation.showProject.ShowProjectFragment"
+        android:name="br.com.lconeto.manualdomc.projects.showProject.presentation.ShowProjectFragment"
         android:label="ShowProjectFragment"
         tools:layout="@layout/fragment_show_project" >
         <argument
             android:name="project"
-            app:argType="br.com.lconeto.manualdomc.projects.data.ProjectVO" />
+            app:argType="br.com.lconeto.manualdomc.projects.index.data.ProjectVO" />
     </fragment>
 
     <fragment
         android:id="@+id/showContactsFragment"
-        android:name="br.com.lconeto.manualdomc.contacts.presentation.showContacts.ShowContactsFragment"
+        android:name="br.com.lconeto.manualdomc.contacts.showContacts.presentation.ShowContactsFragment"
         android:label="ShowContactsFragment"
         tools:layout="@layout/fragment_show_contacts">
         <argument
             android:name="contactCategory"
-            app:argType="br.com.lconeto.manualdomc.contacts.data.contactLists.ContactCategory" />
+            app:argType="br.com.lconeto.manualdomc.contacts.index.data.contactLists.ContactCategory" />
     </fragment>
 
     <fragment
@@ -108,7 +108,7 @@
     </fragment>
     <fragment
         android:id="@+id/ticketsFragment"
-        android:name="br.com.lconeto.manualdomc.tickets.presentation.TicketsFragment"
+        android:name="br.com.lconeto.manualdomc.tickets.index.presentation.TicketsFragment"
         android:label="TicketsFragment"
         tools:layout="@layout/fragment_tickets" >
         <action
@@ -117,7 +117,7 @@
     </fragment>
     <fragment
         android:id="@+id/ticketFormFragment"
-        android:name="br.com.lconeto.manualdomc.tickets.presentation.form.TicketFormFragment"
+        android:name="br.com.lconeto.manualdomc.tickets.form.presentation.TicketFormFragment"
         android:label="TicketFormFragment"
         tools:layout="@layout/fragment_ticket_form" >
         <argument
@@ -130,7 +130,7 @@
     </fragment>
     <fragment
         android:id="@+id/meetingFragment"
-        android:name="br.com.lconeto.manualdomc.meeting.presentation.MeetingFragment"
+        android:name="br.com.lconeto.manualdomc.meeting.index.presentation.MeetingFragment"
         android:label="MeetingFragment"
         tools:layout="@layout/fragment_meeting" >
         <action
@@ -148,12 +148,12 @@
     </fragment>
     <fragment
         android:id="@+id/meetingTipsFragment"
-        android:name="br.com.lconeto.manualdomc.meeting.presentation.tips.MeetingTipsFragment"
+        android:name="br.com.lconeto.manualdomc.meeting.tips.presentation.MeetingTipsFragment"
         android:label="MeetingTipsFragment"
         tools:layout="@layout/fragment_meeting_tips" />
     <fragment
         android:id="@+id/meetingFormFragment"
-        android:name="br.com.lconeto.manualdomc.meeting.presentation.form.MeetingFormFragment"
+        android:name="br.com.lconeto.manualdomc.meeting.form.presentation.MeetingFormFragment"
         android:label="MeetingFormFragment"
         tools:layout="@layout/fragment_meeting_form" >
         <action
@@ -162,24 +162,24 @@
     </fragment>
     <fragment
         android:id="@+id/meetingFollowUpFragment"
-        android:name="br.com.lconeto.manualdomc.meeting.presentation.follow.MeetingFollowUpFragment"
+        android:name="br.com.lconeto.manualdomc.meeting.follow.presentation.MeetingFollowUpFragment"
         android:label="MeetingFollowUpFragment"
         tools:layout="@layout/fragment_meeting_follow_up" >
         <argument
             android:name="meetingData"
-            app:argType="br.com.lconeto.manualdomc.meeting.data.MeetingData" />
+            app:argType="br.com.lconeto.manualdomc.meeting.index.data.MeetingData" />
         <action
             android:id="@+id/action_meetingFollowUpFragment_to_meetingFragmentReport"
             app:destination="@id/meetingFragmentReport" />
     </fragment>
     <fragment
         android:id="@+id/meetingFragmentReport"
-        android:name="br.com.lconeto.manualdomc.meeting.presentation.report.MeetingFragmentReport"
+        android:name="br.com.lconeto.manualdomc.meeting.report.presentation.MeetingFragmentReport"
         android:label="MeetingFragmentReport"
         tools:layout="@layout/fragment_meeting_report" >
         <argument
             android:name="meetingData"
-            app:argType="br.com.lconeto.manualdomc.meeting.data.MeetingData" />
+            app:argType="br.com.lconeto.manualdomc.meeting.index.data.MeetingData" />
         <argument
             android:name="isNewMeeting"
             app:argType="boolean"
