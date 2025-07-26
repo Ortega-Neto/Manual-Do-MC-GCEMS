@@ -118,7 +118,8 @@
     <string name="meeting_report_label_word_of_day">Palavra do Dia:</string>
     <string name="meeting_report_label_start_time">Início:</string>
     <string name="meeting_report_label_end_time">Término:</string>
-    <string name="meeting_report_agenda">Ordem do dia desta reunião: </string>
+    <string name="meeting_report_agenda">Ordem do dia desta reunião</string>
+    <string name="meeting_report_roles">Nominata da reunião</string>
     <string name="meeting_report_annotations">Anotações desta reunião: </string>
     <string name="meeting_report_save">Salvar reunião</string>
     <string name="meeting_report_copy">Copiar dados da reunião</string>
@@ -135,4 +136,7 @@
     <string name="meeting_follow_finish_button">Finalizar Reunião</string>
     <string name="meeting_follow_error_missing_input">Campo obrigatório para encerrar reunião</string>
     <string name="meeting_report_title_order_of_business">Ordem Dos Trabalhos</string>
+    <string name="meeting_report_button_save">Salvar Reunião</string>
+    <string name="meeting_report_button_copy">Copiar Reunião</string>
+
 </resources>

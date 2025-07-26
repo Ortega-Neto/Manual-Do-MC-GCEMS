@@ -11,4 +11,30 @@ data class MeetingData(
     var donations: String = "",
     var wordOfTheDay: String,
     var agendaItems: List<String>,
-) : Parcelable
+    var roles: String,
+) : Parcelable {
+
+    fun toStringMeeting(): String {
+        val agendaString = if (agendaItems.isNotEmpty()) {
+            agendaItems.joinToString(separator = "\n- ", prefix = "- ")
+        } else {
+            "Nenhum item de agenda."
+        }
+
+        return """
+        Detalhes da Reunião:
+        --------------------
+        Data: $day
+        Horário de Início: $startHour
+        Horário de Término: ${if (finishHour.isNotBlank()) finishHour else "Não especificado"}
+        Doações: ${if (donations.isNotBlank()) donations else "Nenhuma doação registrada"}
+        Palavra do Dia: $wordOfTheDay
+
+        Itens da Agenda:
+        $agendaString
+        
+        Nominata:
+        $roles
+        """.trimIndent()
+    }
+}

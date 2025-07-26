@@ -168,6 +168,21 @@
         <argument
             android:name="meetingData"
             app:argType="br.com.lconeto.manualdomc.meeting.data.MeetingData" />
+        <action
+            android:id="@+id/action_meetingFollowUpFragment_to_meetingFragmentReport"
+            app:destination="@id/meetingFragmentReport" />
     </fragment>
-
+    <fragment
+        android:id="@+id/meetingFragmentReport"
+        android:name="br.com.lconeto.manualdomc.meeting.presentation.report.MeetingFragmentReport"
+        android:label="MeetingFragmentReport"
+        tools:layout="@layout/fragment_meeting_report" >
+        <argument
+            android:name="meetingData"
+            app:argType="br.com.lconeto.manualdomc.meeting.data.MeetingData" />
+        <argument
+            android:name="isNewMeeting"
+            app:argType="boolean"
+            android:defaultValue="true" />
+    </fragment>
 </navigation>

@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.lconeto.manualdomc.R
+import br.com.lconeto.manualdomc.common.domain.extensions.navigateTo
 import br.com.lconeto.manualdomc.common.domain.watcher.MoneyTextWatcher
 import br.com.lconeto.manualdomc.common.presentation.check.CheckListAdapter
 import br.com.lconeto.manualdomc.databinding.FragmentMeetingFollowUpBinding
@@ -62,6 +63,13 @@ class MeetingFollowUpFragment : Fragment() {
             if (validateForm()) {
                 args.meetingData.finishHour = binding.editTextFinishHour.text.toString()
                 args.meetingData.donations = binding.editTextDonation.text.toString()
+
+                navigateTo(
+                    action = MeetingFollowUpFragmentDirections.actionMeetingFollowUpFragmentToMeetingFragmentReport(
+                        meetingData = args.meetingData,
+                        isNewMeeting = true
+                    )
+                )
             }
         }
     }

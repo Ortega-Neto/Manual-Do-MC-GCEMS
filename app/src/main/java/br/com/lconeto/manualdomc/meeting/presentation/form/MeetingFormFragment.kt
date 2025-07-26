@@ -6,14 +6,18 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.lconeto.manualdomc.R
 import br.com.lconeto.manualdomc.common.domain.extensions.navigateTo
+import br.com.lconeto.manualdomc.common.domain.extensions.toStringRoles
 import br.com.lconeto.manualdomc.common.domain.extensions.toastMessage
 import br.com.lconeto.manualdomc.databinding.FragmentMeetingFormBinding
 import br.com.lconeto.manualdomc.meeting.data.MeetingData
 import com.google.android.material.textfield.TextInputLayout
 import com.vicmikhailau.maskededittext.MaskedEditText
+import kotlinx.coroutines.launch
 
 class MeetingFormFragment : Fragment() {
 
@@ -22,6 +26,14 @@ class MeetingFormFragment : Fragment() {
 
     private val agendaItems = mutableListOf<String>()
     private lateinit var agendaAdapter: AgendaAdapter
+
+    private val meetingFormViewModel by lazy {
+        ViewModelProvider(
+            this,
+            MeetingFormViewModel.Factory(requireContext())
+        )[MeetingFormViewModel::class.java]
+    }
+    private var roles: String = ""
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,6 +46,12 @@ class MeetingFormFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        lifecycleScope.launch {
+            meetingFormViewModel.getRoles().collect {
+                roles = it.toStringRoles()
+            }
+        }
 
         setupRecyclerView()
         setupListeners()
@@ -137,7 +155,8 @@ class MeetingFormFragment : Fragment() {
             day = binding.editTextDay.text.toString(),
             startHour = binding.editTextStartHour.text.toString(),
             wordOfTheDay = binding.editTextWordOfTheDay.text.toString(),
-            agendaItems = agendaItems
+            agendaItems = agendaItems,
+            roles = roles
         )
 
         navigateTo(
