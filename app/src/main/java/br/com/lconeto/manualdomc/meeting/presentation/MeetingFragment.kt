@@ -11,11 +11,11 @@ import br.com.lconeto.manualdomc.common.data.entity.check.CheckObservation
 import br.com.lconeto.manualdomc.common.domain.extensions.navigateTo
 import br.com.lconeto.manualdomc.common.domain.extensions.setTitleName
 import br.com.lconeto.manualdomc.databinding.FragmentMeetingBinding
-import br.com.lconeto.manualdomc.meeting.data.MeetingCheckListType
-import br.com.lconeto.manualdomc.meeting.data.MeetingClassRoomOrganization
-import br.com.lconeto.manualdomc.meeting.data.MeetingElevation
-import br.com.lconeto.manualdomc.meeting.data.MeetingInitialization
-import br.com.lconeto.manualdomc.meeting.data.MeetingPublic
+import br.com.lconeto.manualdomc.meeting.data.check.MeetingCheckListType
+import br.com.lconeto.manualdomc.meeting.data.types.MeetingClassRoomOrganization
+import br.com.lconeto.manualdomc.meeting.data.types.MeetingElevation
+import br.com.lconeto.manualdomc.meeting.data.types.MeetingInitialization
+import br.com.lconeto.manualdomc.meeting.data.types.MeetingPublic
 import br.com.lconeto.manualdomc.meeting.presentation.check.MeetingCheckListDialogFragment
 import br.com.lconeto.manualdomc.meeting.presentation.check.MeetingCheckListTypeSelected
 
@@ -51,6 +51,8 @@ class MeetingFragment : Fragment() {
         binding.meetingRoles.imageContactTitle.setImageResource(R.drawable.ic_role)
         binding.meetingForm.textContactTitle.text = getString(R.string.meeting_follow)
         binding.meetingForm.imageContactTitle.setImageResource(R.drawable.ic_meeting_follow)
+        binding.meetingRegistre.textContactTitle.text = getString(R.string.meeting_register)
+        binding.meetingRegistre.imageContactTitle.setImageResource(R.drawable.ic_meeting_register)
     }
 
     private fun setupListeners() {
@@ -68,6 +70,9 @@ class MeetingFragment : Fragment() {
             )
         }
         binding.meetingForm.root.setOnClickListener {
+            navigateTo(
+                action = MeetingFragmentDirections.actionMeetingFragmentToMeetingFormFragment()
+            )
         }
     }
 

@@ -1,4 +1,4 @@
-package br.com.lconeto.manualdomc.meeting.data
+package br.com.lconeto.manualdomc.meeting.data.check
 
 enum class MeetingCheckListType {
     ORGANIZATION,

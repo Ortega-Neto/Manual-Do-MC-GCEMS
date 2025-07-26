@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_0"
+        app:layout_constraintBottom_toTopOf="@+id/save_meeting_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:fillViewport="true" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/margin_16">
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_20"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/margin_16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="26/07/2025" />
+
+            <TextView
+                android:id="@+id/tv_label_start_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_48"
+                android:text="@string/meeting_report_label_start_time"
+                android:textSize="@dimen/text_16"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_date" />
+
+            <TextView
+                android:id="@+id/tv_start_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_8"
+                android:textSize="@dimen/text_16"
+                app:layout_constraintStart_toEndOf="@+id/tv_label_start_time"
+                app:layout_constraintTop_toTopOf="@+id/tv_label_start_time"
+                tools:text="19:00" />
+
+            <TextView
+                android:id="@+id/tv_label_end_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/meeting_report_label_end_time"
+                android:layout_marginEnd="@dimen/margin_8"
+                android:textSize="@dimen/text_16"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/tv_end_time"
+                app:layout_constraintTop_toTopOf="@+id/tv_label_start_time" />
+
+            <TextView
+                android:id="@+id/tv_end_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_48"
+                android:textSize="@dimen/text_16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_label_end_time"
+                tools:text="21:30" />
+
+            <TextView
+                android:id="@+id/tv_label_donations"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/meeting_report_label_donations"
+                android:textSize="@dimen/text_16"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/margin_8"
+                android:layout_marginStart="@dimen/margin_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_label_start_time" />
+
+            <TextView
+                android:id="@+id/tv_donations_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_8"
+                android:textSize="@dimen/text_16"
+                app:layout_constraintStart_toEndOf="@+id/tv_label_donations"
+                app:layout_constraintTop_toTopOf="@+id/tv_label_donations"
+                tools:text="R$ 150,00" />
+
+            <TextView
+                android:id="@+id/tv_label_word_of_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/meeting_report_label_word_of_day"
+                android:textSize="@dimen/text_16"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/margin_8"
+                android:layout_marginStart="@dimen/margin_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_label_donations" />
+
+            <TextView
+                android:id="@+id/tv_word_of_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_8"
+                android:textSize="@dimen/text_16"
+                app:layout_constraintStart_toEndOf="@+id/tv_label_word_of_day"
+                app:layout_constraintTop_toTopOf="@+id/tv_label_word_of_day"
+                tools:text="@string/label_name" />
+
+            <TextView
+                android:id="@+id/text_view_report_agenda"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/meeting_report_agenda"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_16"
+                android:layout_marginVertical="@dimen/margin_8"
+                android:layout_marginHorizontal="@dimen/margin_16"
+                app:layout_constraintTop_toBottomOf="@+id/tv_word_of_day"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_review_agenda_items"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_16"
+                android:layout_marginVertical="@dimen/margin_16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_view_report_agenda"
+                tools:listitem="@layout/list_item_agenda_text" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/save_meeting_button"
+        android:layout_width="@dimen/margin_0"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_16"
+        android:layout_marginEnd="@dimen/margin_16"
+        android:layout_marginBottom="@dimen/margin_16"
+        android:text="@string/meeting_form_advance_button"
+        app:backgroundTint="@color/colorPrimary"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

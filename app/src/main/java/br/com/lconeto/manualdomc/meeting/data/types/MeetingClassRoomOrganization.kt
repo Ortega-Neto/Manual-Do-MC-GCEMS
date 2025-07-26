@@ -1,4 +1,4 @@
-package br.com.lconeto.manualdomc.meeting.data
+package br.com.lconeto.manualdomc.meeting.data.types
 
 import br.com.lconeto.manualdomc.common.data.entity.check.CheckList
 

@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import br.com.lconeto.manualdomc.databinding.BottomSheetMeetingTypeBinding
-import br.com.lconeto.manualdomc.meeting.data.MeetingCheckListType
+import br.com.lconeto.manualdomc.meeting.data.check.MeetingCheckListType
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class MeetingCheckListDialogFragment(

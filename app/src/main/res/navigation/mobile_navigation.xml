@@ -142,11 +142,32 @@
         <action
             android:id="@+id/action_meetingFragment_to_meetingTipsFragment"
             app:destination="@id/meetingTipsFragment" />
+        <action
+            android:id="@+id/action_meetingFragment_to_meetingFormFragment"
+            app:destination="@id/meetingFormFragment" />
     </fragment>
     <fragment
         android:id="@+id/meetingTipsFragment"
         android:name="br.com.lconeto.manualdomc.meeting.presentation.tips.MeetingTipsFragment"
         android:label="MeetingTipsFragment"
         tools:layout="@layout/fragment_meeting_tips" />
+    <fragment
+        android:id="@+id/meetingFormFragment"
+        android:name="br.com.lconeto.manualdomc.meeting.presentation.form.MeetingFormFragment"
+        android:label="MeetingFormFragment"
+        tools:layout="@layout/fragment_meeting_form" >
+        <action
+            android:id="@+id/action_meetingFormFragment_to_meetingFollowUpFragment"
+            app:destination="@id/meetingFollowUpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/meetingFollowUpFragment"
+        android:name="br.com.lconeto.manualdomc.meeting.presentation.follow.MeetingFollowUpFragment"
+        android:label="MeetingFollowUpFragment"
+        tools:layout="@layout/fragment_meeting_follow_up" >
+        <argument
+            android:name="meetingData"
+            app:argType="br.com.lconeto.manualdomc.meeting.data.MeetingData" />
+    </fragment>
 
 </navigation>

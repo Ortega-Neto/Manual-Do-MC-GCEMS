@@ -1,4 +1,4 @@
-package br.com.lconeto.manualdomc.meeting.data
+package br.com.lconeto.manualdomc.meeting.data.tips
 
 object MeetingPlanningTips {
     const val TIP_1_TITLE = "1. Identifique o Objetivo da Reunião"

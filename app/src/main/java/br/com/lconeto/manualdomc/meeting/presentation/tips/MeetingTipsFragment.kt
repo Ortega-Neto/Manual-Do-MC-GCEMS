@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import br.com.lconeto.manualdomc.R
 import br.com.lconeto.manualdomc.common.domain.extensions.setTitleName
 import br.com.lconeto.manualdomc.databinding.FragmentMeetingTipsBinding
-import br.com.lconeto.manualdomc.meeting.data.MeetingPlanningTips
+import br.com.lconeto.manualdomc.meeting.data.tips.MeetingPlanningTips
 
 class MeetingTipsFragment : Fragment() {
     private var _binding: FragmentMeetingTipsBinding? = null

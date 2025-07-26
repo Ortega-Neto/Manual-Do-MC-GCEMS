@@ -92,6 +92,7 @@
     <string name="meeting_check_list">Check List de Reuniões</string>
     <string name="meeting_roles">Nominata da reunião</string>
     <string name="meeting_follow">Acompanhamento de Reunião</string>
+    <string name="meeting_register">Registro de Reuniões</string>
     <string name="meeting_organization">Organização da Sala</string>
     <string name="meeting_initialization">Iniciação ao Grau Iniciático</string>
     <string name="meeting_elevation">Iniciação ao Grau DeMolay</string>
@@ -101,5 +102,37 @@
     <string name="meeting_elevation_observation">Para solicitar materiais e paramentos ao GCEMS, use tickets com 7 dias de antecedência da cerimônia.</string>
     <string name="meeting_tip_tittle">Dicas de como preparar uma reunião</string>
     <string name="meeting_tip_tittle_description">O planejamento é crucial para uma reunião bem-sucedida. A seguir, apresentamos sete dicas para te auxiliar nesse processo.</string>
-
+    <string name="meeting_form_initial_donation">0,00</string>
+    <string name="meeting_form_day">Dia da reunião</string>
+    <string name="meeting_form_start_hour">Horário de início da reunião</string>
+    <string name="meeting_form_finish_hour">Horário de encerramento da reunião</string>
+    <string name="meeting_form_word_of_the_day">Palavra do dia</string>
+    <string name="meeting_form_donation">Tronco da solidariedade</string>
+    <string name="meeting_form_add_agenda">Adicionar ordem do dia</string>
+    <string name="meeting_form_agenda">Ordem do dia adicionada: </string>
+    <string name="meeting_form_advance_button">Avançar</string>
+    <string name="meeting_form_error_missing_input">Campo obrigatório para iniciar reunião</string>
+    <string name="meeting_form_error_missing_agenda">É necessário, ao menos, um item da Ordem do dia</string>
+    <string name="meeting_report_label_date">Data:</string>
+    <string name="meeting_report_label_donations">Tronco da Solidariedade:</string>
+    <string name="meeting_report_label_word_of_day">Palavra do Dia:</string>
+    <string name="meeting_report_label_start_time">Início:</string>
+    <string name="meeting_report_label_end_time">Término:</string>
+    <string name="meeting_report_agenda">Ordem do dia desta reunião: </string>
+    <string name="meeting_report_annotations">Anotações desta reunião: </string>
+    <string name="meeting_report_save">Salvar reunião</string>
+    <string name="meeting_report_copy">Copiar dados da reunião</string>
+    <string name="meeting_follow_title_important_pages">Páginas Importantes</string>
+    <string name="meeting_follow_page_initiation_degree">Abertura do Grau Iniciático - Pág. 20</string>
+    <string name="meeting_follow_page_late_comers">Aos que Chegam Atrasados - Pág. 14</string>
+    <string name="meeting_follow_page_demolay_degree">Abertura do Grau DeMolay - Pág. 34</string>
+    <string name="meeting_follow_page_exam_questionnaire">Questionário para Exame - Pág. 92</string>
+    <string name="meeting_follow_page_working_degrees_recess">Trabalhando nos Graus e Recesso - Pág. 11</string>
+    <string name="meeting_follow_page_nine_o_clock_ceremony">Cerimônia das Nove Horas - Pág. 39</string>
+    <string name="meeting_follow_page_closing_ceremony">Cerimônia de Encerramento - Pág. 42</string>
+    <string name="meeting_follow_page_lost_word">Palavra Perdida - Pág. 24</string>
+    <string name="meeting_follow_title_agenda">Controle da Ordem do Dia</string>
+    <string name="meeting_follow_finish_button">Finalizar Reunião</string>
+    <string name="meeting_follow_error_missing_input">Campo obrigatório para encerrar reunião</string>
+    <string name="meeting_report_title_order_of_business">Ordem Dos Trabalhos</string>
 </resources>
