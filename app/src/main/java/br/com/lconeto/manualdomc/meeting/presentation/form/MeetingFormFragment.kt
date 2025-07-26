@@ -53,17 +53,17 @@ class MeetingFormFragment : Fragment() {
         }
 
         binding.editTextAgenda.setOnEditorActionListener { _, actionId, event ->
-            if (actionId == EditorInfo.IME_ACTION_DONE ||
-                (
-                    event != null && event.keyCode == android.view.KeyEvent.KEYCODE_ENTER &&
-                        event.action == android.view.KeyEvent.ACTION_DOWN
-                    )
-            ) {
+            val isEnterKeyPressed = (
+                event?.keyCode == android.view.KeyEvent.KEYCODE_ENTER &&
+                    event.action == android.view.KeyEvent.ACTION_DOWN
+                )
+            val isDoneAction = (actionId == EditorInfo.IME_ACTION_DONE)
+
+            if (isDoneAction || isEnterKeyPressed) {
                 addAgendaItem()
-                true // Consume the event
-            } else {
-                false
+                return@setOnEditorActionListener true
             }
+            return@setOnEditorActionListener false
         }
 
         binding.advanceButton.setOnClickListener {
@@ -87,10 +87,10 @@ class MeetingFormFragment : Fragment() {
         var isValid = true
 
         isValid = validateMaskedEditText(
-            binding.textInputLayoutDay, binding.editTextDay, 10
+            binding.textInputLayoutDay, binding.editTextDay
         ) && isValid
         isValid = validateMaskedEditText(
-            binding.textInputLayoutStartHour, binding.editTextStartHour, 5
+            binding.textInputLayoutStartHour, binding.editTextStartHour
         ) && isValid
 
         isValid = validateTextInputEditText(
@@ -107,13 +107,11 @@ class MeetingFormFragment : Fragment() {
 
     private fun validateMaskedEditText(
         textInputLayout: TextInputLayout,
-        editText: MaskedEditText,
-        expectedLength: Int
+        editText: MaskedEditText
     ): Boolean {
         val text = editText.text.toString().trim()
-        val maskAppliedText = editText.text.toString()
 
-        if (text.isEmpty() || maskAppliedText.length < expectedLength) {
+        if (text.isEmpty()) {
             textInputLayout.error = getString(R.string.meeting_form_error_missing_input)
             return false
         }
