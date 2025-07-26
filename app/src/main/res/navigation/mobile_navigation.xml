@@ -130,7 +130,7 @@
     </fragment>
     <fragment
         android:id="@+id/meetingFragment"
-        android:name="br.com.lconeto.manualdomc.meeting.MeetingFragment"
+        android:name="br.com.lconeto.manualdomc.meeting.presentation.MeetingFragment"
         android:label="MeetingFragment"
         tools:layout="@layout/fragment_meeting" >
         <action
@@ -139,6 +139,14 @@
         <action
             android:id="@+id/action_meetingFragment_to_checkListFragment"
             app:destination="@id/checkListFragment" />
+        <action
+            android:id="@+id/action_meetingFragment_to_meetingTipsFragment"
+            app:destination="@id/meetingTipsFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/meetingTipsFragment"
+        android:name="br.com.lconeto.manualdomc.meeting.presentation.tips.MeetingTipsFragment"
+        android:label="MeetingTipsFragment"
+        tools:layout="@layout/fragment_meeting_tips" />
 
 </navigation>

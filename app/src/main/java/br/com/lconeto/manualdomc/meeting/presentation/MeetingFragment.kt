@@ -1,4 +1,4 @@
-package br.com.lconeto.manualdomc.meeting
+package br.com.lconeto.manualdomc.meeting.presentation
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -55,13 +55,17 @@ class MeetingFragment : Fragment() {
 
     private fun setupListeners() {
         binding.meetingTips.root.setOnClickListener {
+            navigateTo(
+                action = MeetingFragmentDirections.actionMeetingFragmentToMeetingTipsFragment()
+            )
         }
         binding.meetingCheckList.root.setOnClickListener {
             showBottomSheet()
         }
         binding.meetingRoles.root.setOnClickListener {
-            val action = MeetingFragmentDirections.actionMeetingFragmentToEditRolesFragment()
-            navigateTo(action)
+            navigateTo(
+                action = MeetingFragmentDirections.actionMeetingFragmentToEditRolesFragment()
+            )
         }
         binding.meetingForm.root.setOnClickListener {
         }

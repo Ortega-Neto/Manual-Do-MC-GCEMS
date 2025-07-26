@@ -99,5 +99,7 @@
     <string name="meeting_public_observation">Para a Cerimônia das Flores, as flores podem ficar sobre o altar. No entanto, se for usado um vaso, um patamar deve ser colocado ao lado do altar para acomodá-lo.</string>
     <string name="meeting_initialization_observation">Um bom prazo deve ser dado entre o Escrutínio e o recolhimentoda taxa.</string>
     <string name="meeting_elevation_observation">Para solicitar materiais e paramentos ao GCEMS, use tickets com 7 dias de antecedência da cerimônia.</string>
+    <string name="meeting_tip_tittle">Dicas de como preparar uma reunião</string>
+    <string name="meeting_tip_tittle_description">O planejamento é crucial para uma reunião bem-sucedida. A seguir, apresentamos sete dicas para te auxiliar nesse processo.</string>
 
 </resources>
