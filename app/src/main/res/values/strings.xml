@@ -15,7 +15,7 @@
     <string name="menu_projects">Projetos</string>
 
     <!--  Home  -->
-    <string name="home_meetings">Reuniões</string>
+    <string name="home_meeting">Reunião</string>
     <string name="home_roles">Nominata</string>
     <string name="home_packages">Pacotes</string>
     <string name="home_tickets">Tickets</string>
@@ -64,6 +64,7 @@
 
     <!--  Roles  -->
     <string name="roles_button_roles_save">Salvar Cargos</string>
+    <string name="roles_button_roles_copy">Copiar Nominata</string>
     <string name="roles_error_missing_role">Cargo obrigatório para reunião</string>
     <string name="roles_updated_roles">Cargos atualizados!</string>
 
@@ -85,5 +86,18 @@
     <string name="ticket_error_missing_input">Campo obrigatório para modelo</string>
     <string name="ticket_observation_auth">Ticket para Autorização. Categoria: Secretaria SisDM Sub: Pacotes (Código de Autorização)</string>
     <string name="ticket_observation_email">Ticket para Atualização de Email. Categoria: Secretaria SisDM Sub: Membros (Atualização Cadastral)</string>
+
+    <!--  Meeting  -->
+    <string name="meeting_tips">Dicas - Preparar uma reunião</string>
+    <string name="meeting_check_list">Check List de Reuniões</string>
+    <string name="meeting_roles">Nominata da reunião</string>
+    <string name="meeting_follow">Acompanhamento de Reunião</string>
+    <string name="meeting_organization">Organização da Sala</string>
+    <string name="meeting_initialization">Iniciação ao Grau Iniciático</string>
+    <string name="meeting_elevation">Iniciação ao Grau DeMolay</string>
+    <string name="meeting_public">Reunião Pública</string>
+    <string name="meeting_public_observation">Para a Cerimônia das Flores, as flores podem ficar sobre o altar. No entanto, se for usado um vaso, um patamar deve ser colocado ao lado do altar para acomodá-lo.</string>
+    <string name="meeting_initialization_observation">Um bom prazo deve ser dado entre o Escrutínio e o recolhimentoda taxa.</string>
+    <string name="meeting_elevation_observation">Para solicitar materiais e paramentos ao GCEMS, use tickets com 7 dias de antecedência da cerimônia.</string>
 
 </resources>

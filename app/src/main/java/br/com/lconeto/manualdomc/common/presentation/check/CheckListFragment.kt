@@ -5,9 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
-import br.com.lconeto.manualdomc.common.domain.extensions.navigateTo
 import br.com.lconeto.manualdomc.common.domain.extensions.setTitleName
 import br.com.lconeto.manualdomc.databinding.FragmentCheckListBinding
 
@@ -54,8 +54,7 @@ class CheckListFragment : Fragment() {
 
     private fun setupListeners() {
         binding.finishButton.setOnClickListener {
-            val action = CheckListFragmentDirections.actionCheckListFragmentToNavHome()
-            navigateTo(action)
+            findNavController().popBackStack()
         }
     }
 

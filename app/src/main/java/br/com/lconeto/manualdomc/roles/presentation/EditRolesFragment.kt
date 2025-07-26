@@ -32,7 +32,9 @@ import br.com.lconeto.manualdomc.common.data.entity.role.RoleConstants.STANDARD_
 import br.com.lconeto.manualdomc.common.data.entity.role.RoleConstants.THIRD_PRECEPTOR
 import br.com.lconeto.manualdomc.common.data.entity.role.RoleConstants.TREASURER
 import br.com.lconeto.manualdomc.common.data.entity.role.RoleInfo
+import br.com.lconeto.manualdomc.common.domain.extensions.copyTextToClipboard
 import br.com.lconeto.manualdomc.common.domain.extensions.setTitleName
+import br.com.lconeto.manualdomc.common.domain.extensions.toStringRoles
 import br.com.lconeto.manualdomc.common.domain.extensions.toastMessage
 import br.com.lconeto.manualdomc.common.presentation.loading.LoadingDialog
 import br.com.lconeto.manualdomc.databinding.ComponentEditRoleItemBinding
@@ -128,6 +130,9 @@ class EditRolesFragment : Fragment() {
     private fun setupSaveButton() {
         binding.saveButton.setOnClickListener {
             validateAndSaveRoles()
+        }
+        binding.copyRolesButton.setOnClickListener {
+            copyTextToClipboard(roles.toStringRoles())
         }
     }
 

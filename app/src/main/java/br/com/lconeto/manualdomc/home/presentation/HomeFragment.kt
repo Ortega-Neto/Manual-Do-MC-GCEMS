@@ -31,7 +31,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun populateButtons() {
-        binding.homeMeeting.textContactTitle.text = getString(R.string.home_meetings)
+        binding.homeMeeting.textContactTitle.text = getString(R.string.home_meeting)
         binding.homeMeeting.imageContactTitle.setImageResource(R.drawable.ic_meeting)
         binding.homeRoles.textContactTitle.text = getString(R.string.home_roles)
         binding.homeRoles.imageContactTitle.setImageResource(R.drawable.ic_role)
@@ -42,7 +42,9 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupListeners() {
-        binding.homeMeeting.root.setOnClickListener { }
+        binding.homeMeeting.root.setOnClickListener {
+            navigateTo(HomeFragmentDirections.actionNavHomeToMeetingFragment())
+        }
         binding.homeRoles.root.setOnClickListener {
             navigateTo(HomeFragmentDirections.actionNavHomeToEditRolesFragment())
         }
