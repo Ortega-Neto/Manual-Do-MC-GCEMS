@@ -138,5 +138,6 @@
     <string name="meeting_report_title_order_of_business">Ordem Dos Trabalhos</string>
     <string name="meeting_report_button_save">Salvar Reunião</string>
     <string name="meeting_report_button_copy">Copiar Reunião</string>
+    <string name="meeting_report_saving_meeting">Salvando Reunião</string>
 
 </resources>

@@ -174,7 +174,7 @@
     </fragment>
     <fragment
         android:id="@+id/meetingFragmentReport"
-        android:name="br.com.lconeto.manualdomc.meeting.report.presentation.MeetingFragmentReport"
+        android:name="br.com.lconeto.manualdomc.meeting.report.presentation.MeetingReportFragment"
         android:label="MeetingFragmentReport"
         tools:layout="@layout/fragment_meeting_report" >
         <argument
@@ -184,5 +184,10 @@
             android:name="isNewMeeting"
             app:argType="boolean"
             android:defaultValue="true" />
+        <action
+            android:id="@+id/action_meetingFragmentReport_to_nav_home"
+            app:destination="@id/nav_home"
+            app:popUpTo="@id/nav_home"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>
