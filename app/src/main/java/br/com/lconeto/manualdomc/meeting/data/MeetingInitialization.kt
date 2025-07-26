@@ -6,36 +6,35 @@ import br.com.lconeto.manualdomc.common.data.entity.check.CheckObservation
 
 object MeetingInitialization {
     private const val TITLE = "Check List – Iniciação ao Grau Iniciático"
-    private const val STEP_1 = "Iniciar busca de novos candidatos (Escolas, Lojas Maçônicas, " +
-        "Redes Sociais, Grupos de Amigos)"
-    private const val STEP_2 = "Definição de membros e taxas junto à Comissão de Incremento de Novos Membros"
-    private const val STEP_3 = "Preenchimento do formulário “O Caminho Começa Aqui”"
-    private const val STEP_4 = "Organizar datas das Sindicâncias junto aos candidatos"
-    private const val STEP_5 = "Preparar questionário de Sindicância"
-    private const val STEP_6 = "Marcar visita ao candidato e sua família junto com o Conselho Consultivo"
-    private const val STEP_7 = "Realizar visita"
-    private const val STEP_8 = "Informar aos data da Cerimônia de Iniciação, taxas e mais detalhes referente " +
-        "à iniciação do candidato"
-    private const val STEP_9 = "Emitir parecer ao Capítulo por meio do Relatório de Sindicância"
-    private const val STEP_10 = "Leitura do Relatório de Sindicância com o parecer da Comissão de " +
-        "Incremento de Novo Membros"
-    private const val STEP_11 = "Apresentação do Relatório de Sindicância deverá ser em Grau Iniciático"
-    private const val STEP_12 = "Realizar votação"
-    private const val STEP_13 = "Votação para aprovação deve ser em Grau DeMolay, sendo obrigatoriamente secreta"
-    private const val STEP_14 = "Comunicar ao candidato da sua aprovação"
-    private const val STEP_15 = "Auxilia-lo em questões, como, traje, dúvidas de horário e afins"
-    private const val STEP_16 = "Manter contato para auxiliar o candidato em questões, como, traje, " +
-        "dúvidas de horário e sempre ter atualização do mesmo"
-    private const val STEP_17 = "Receber todas as taxas"
-    private const val STEP_18 = "Criar o Pacote no SISDM com antecedência de no mínimo 7 (SETE) DIAS"
-    private const val STEP_19 = "Ao realizar o pagamento via PIX é essencial colocar o número do pacote " +
-        "da descrição do pagamento"
-    private const val STEP_20 = "Enviar Comprovante de Pagamento (PIX) e nº do pacote no ticket através do SISDM"
-    private const val STEP_21 = "Solicitar ao Grande Conselho Estadual o Ofício de autorização para concessão do Grau"
-    private const val STEP_22 = "Enviar Convites"
-    private const val STEP_23 = "Marcar Ensaio Ritualístico"
-    private const val STEP_24 = "Verificar vendas, Coroa e joias"
-    private const val STEP_25 = "Providenciar coquetel ou jantar"
+    private const val STEP_1 = "Comece a buscar novos candidatos em escolas, Lojas Maçônicas, " +
+        "redes sociais e grupos de amigos."
+    private const val STEP_2 = "Defina os membros e as taxas com a Comissão de Incremento de Novos Membros."
+    private const val STEP_3 = "Preencha o formulário “O Caminho Começa Aqui”."
+    private const val STEP_4 = "Organize as datas das Sindicâncias com os candidatos."
+    private const val STEP_5 = "Prepare o questionário de Sindicância."
+    private const val STEP_6 = "Agende uma visita ao candidato e sua família junto com o Conselho Consultivo."
+    private const val STEP_7 = "Realize a visita."
+    private const val STEP_8 = "Informe ao candidato a data da Cerimônia de Iniciação, as taxas e " +
+        "outros detalhes sobre sua iniciação."
+    private const val STEP_9 = "Emita um parecer ao Capítulo por meio do Relatório de Sindicância."
+    private const val STEP_10 = "Leia o Relatório de Sindicância com o parecer da Comissão de Incremento " +
+        "de Novos Membros."
+    private const val STEP_11 = "Apresente o Relatório de Sindicância no Grau Iniciático."
+    private const val STEP_12 = "Realize a votação."
+    private const val STEP_13 = "A votação para aprovação deve ser secreta e ocorrer no Grau DeMolay."
+    private const val STEP_14 = "Comunique o candidato sobre sua aprovação."
+    private const val STEP_15 = "Ajude o candidato com questões sobre traje, horários e assuntos similares."
+    private const val STEP_16 = "Mantenha contato para auxiliar o candidato com questões sobre traje, " +
+        "dúvidas de horário e sempre mantenha-se atualizado sobre ele."
+    private const val STEP_17 = "Receba todas as taxas."
+    private const val STEP_18 = "Crie o Pacote no SISDM com no mínimo 7 dias de antecedência."
+    private const val STEP_19 = "Ao pagar via PIX, coloque o número do pacote na descrição do pagamento."
+    private const val STEP_20 = "Envie o Comprovante de Pagamento (PIX) e o número do pacote pelo ticket no SISDM."
+    private const val STEP_21 = "Solicite ao Grande Conselho Estadual o Ofício de autorização para a concessão do Grau."
+    private const val STEP_22 = "Envie os Convites."
+    private const val STEP_23 = "Marque o Ensaio Ritualístico."
+    private const val STEP_24 = "Verifique as vendas, a Coroa e as joias."
+    private const val STEP_25 = "Providencie o coquetel ou jantar."
 
     val checkList = CheckList(
         tittle = TITLE,
