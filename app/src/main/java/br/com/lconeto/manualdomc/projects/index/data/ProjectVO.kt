@@ -11,4 +11,5 @@ data class ProjectVO(
     val image: Int,
     val name: String,
     val description: String,
+    val pdfFileName: String
 ) : Parcelable

@@ -9,6 +9,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import br.com.lconeto.manualdomc.R
+import br.com.lconeto.manualdomc.common.domain.extensions.setupLink
 import br.com.lconeto.manualdomc.databinding.FragmentProjectsBinding
 import br.com.lconeto.manualdomc.projects.index.data.ProjectVO
 import br.com.lconeto.manualdomc.projects.index.presentation.adapter.OnProjectClickListener
@@ -35,7 +37,16 @@ class ProjectsFragment : Fragment(), OnProjectClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setupProjectLinks()
         populateRecyclerView()
+    }
+
+    private fun setupProjectLinks() {
+        setupLink(
+            textView = binding.textViewProjectLinksTittle,
+            linkText = getString(R.string.project_links),
+            url = URL_DRIVE
+        )
     }
 
     private fun populateRecyclerView() {
@@ -59,5 +70,9 @@ class ProjectsFragment : Fragment(), OnProjectClickListener {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private companion object {
+        const val URL_DRIVE = "https://drive.google.com/drive/u/4/folders/17cev5--ovuCA_zPjwR4hveJQzKSnB-b2"
     }
 }

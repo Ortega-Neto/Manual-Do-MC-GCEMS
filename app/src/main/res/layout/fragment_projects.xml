@@ -6,6 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".contacts.index.presentation.ContactsFragment">
 
+    <TextView
+        android:id="@+id/text_view_project_links_tittle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/margin_16"
+        android:text="@string/project_links"
+        android:textSize="@dimen/text_22"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/projectsRecyclerView"
         android:layout_width="@dimen/margin_0"
@@ -14,7 +27,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/list_item_project"/>
+        app:layout_constraintTop_toBottomOf="@+id/text_view_project_links_tittle"
+        tools:listitem="@layout/list_item_project" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

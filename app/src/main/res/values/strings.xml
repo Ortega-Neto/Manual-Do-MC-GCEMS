@@ -20,6 +20,10 @@
     <string name="home_packages">Pacotes</string>
     <string name="home_tickets">Tickets</string>
 
+    <!--  Project  -->
+    <string name="project_links">Link do drive com editais</string>
+    <string name="show_project_open_pdf">Abrir Edital em PDF</string>
+
     <!--  Bank Details  -->
     <string name="bank_details_title">Conta Bancária/PIX do GCEMS</string>
     <string name="bank_details_pix_title">Pix do GCEMS</string>

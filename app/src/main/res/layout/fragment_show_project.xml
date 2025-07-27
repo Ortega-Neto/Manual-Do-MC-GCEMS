@@ -38,7 +38,8 @@
             android:id="@+id/project_description"
             android:layout_width="@dimen/margin_0"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="@dimen/margin_8"
+            android:layout_marginTop="@dimen/margin_8"
+            android:layout_marginBottom="@dimen/margin_16"
             android:layout_marginHorizontal="@dimen/margin_24"
             android:textAlignment="viewStart"
             android:textSize="@dimen/text_16"
@@ -46,7 +47,23 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/project_name"
+            app:layout_constraintBottom_toTopOf="@+id/open_pdf_button"
             tools:text="@string/label_project_description" />
+
+        <Button
+            android:id="@+id/open_pdf_button"
+            android:layout_width="@dimen/margin_0"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16"
+            android:layout_marginEnd="@dimen/margin_16"
+            android:layout_marginBottom="@dimen/margin_16"
+            android:text="@string/show_project_open_pdf"
+            app:backgroundTint="@color/colorPrimary"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
