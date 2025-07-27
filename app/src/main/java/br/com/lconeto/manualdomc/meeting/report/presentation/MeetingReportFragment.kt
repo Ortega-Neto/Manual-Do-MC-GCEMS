@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.lconeto.manualdomc.R
 import br.com.lconeto.manualdomc.common.domain.extensions.copyTextToClipboard
 import br.com.lconeto.manualdomc.common.domain.extensions.navigateTo
+import br.com.lconeto.manualdomc.common.domain.extensions.setTitleName
 import br.com.lconeto.manualdomc.common.presentation.loading.LoadingDialog
 import br.com.lconeto.manualdomc.common.presentation.meeting.MeetingMemoryViewModel
 import br.com.lconeto.manualdomc.databinding.FragmentMeetingReportBinding
@@ -41,6 +42,7 @@ class MeetingReportFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setTitleName(getString(R.string.meeting_report_tittle))
 
         setupUI()
         setupButton()

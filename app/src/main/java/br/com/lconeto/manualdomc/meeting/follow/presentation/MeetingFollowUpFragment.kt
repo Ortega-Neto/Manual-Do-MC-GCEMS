@@ -9,6 +9,7 @@ import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.lconeto.manualdomc.R
 import br.com.lconeto.manualdomc.common.domain.extensions.navigateTo
+import br.com.lconeto.manualdomc.common.domain.extensions.setTitleName
 import br.com.lconeto.manualdomc.common.domain.watcher.MoneyTextWatcher
 import br.com.lconeto.manualdomc.common.presentation.check.CheckListAdapter
 import br.com.lconeto.manualdomc.databinding.FragmentMeetingFollowUpBinding
@@ -35,6 +36,7 @@ class MeetingFollowUpFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setTitleName(getString(R.string.meeting_follow_up_tittle))
 
         agendaItems = args.meetingData.agendaItems
 

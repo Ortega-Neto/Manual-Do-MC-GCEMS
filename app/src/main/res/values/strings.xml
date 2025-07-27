@@ -143,5 +143,8 @@
     <string name="meeting_register_delete">Deletar reunião</string>
     <string name="meeting_register_searching">Buscando reuniões</string>
     <string name="meeting_register_deleting">Deletando reunião</string>
+    <string name="meeting_form_create_tittle">Criando uma reunião</string>
+    <string name="meeting_follow_up_tittle">Acompanhamento de Reunião</string>
+    <string name="meeting_report_tittle">Relatório de Reunião</string>
 
 </resources>

@@ -12,6 +12,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.lconeto.manualdomc.R
 import br.com.lconeto.manualdomc.common.domain.extensions.navigateTo
+import br.com.lconeto.manualdomc.common.domain.extensions.setTitleName
 import br.com.lconeto.manualdomc.common.domain.extensions.toStringRoles
 import br.com.lconeto.manualdomc.common.domain.extensions.toastMessage
 import br.com.lconeto.manualdomc.databinding.FragmentMeetingFormBinding
@@ -48,6 +49,7 @@ class MeetingFormFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setTitleName(getString(R.string.meeting_form_create_tittle))
 
         lifecycleScope.launch {
             meetingFormViewModel.getRoles().collect {
