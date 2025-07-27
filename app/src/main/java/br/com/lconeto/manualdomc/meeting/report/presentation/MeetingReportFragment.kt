@@ -15,7 +15,7 @@ import br.com.lconeto.manualdomc.common.domain.extensions.navigateTo
 import br.com.lconeto.manualdomc.common.presentation.loading.LoadingDialog
 import br.com.lconeto.manualdomc.common.presentation.meeting.MeetingMemoryViewModel
 import br.com.lconeto.manualdomc.databinding.FragmentMeetingReportBinding
-import br.com.lconeto.manualdomc.meeting.form.presentation.adapter.AgendaAdapter
+import br.com.lconeto.manualdomc.meeting.report.presentation.adapter.AgendaAdapter
 import kotlinx.coroutines.launch
 
 class MeetingReportFragment : Fragment() {

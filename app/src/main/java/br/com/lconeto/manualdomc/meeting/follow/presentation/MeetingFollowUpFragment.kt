@@ -13,7 +13,6 @@ import br.com.lconeto.manualdomc.common.domain.watcher.MoneyTextWatcher
 import br.com.lconeto.manualdomc.common.presentation.check.CheckListAdapter
 import br.com.lconeto.manualdomc.databinding.FragmentMeetingFollowUpBinding
 import br.com.lconeto.manualdomc.meeting.follow.data.OrderOfBusiness
-import br.com.lconeto.manualdomc.meeting.form.presentation.adapter.AgendaAdapter
 import com.google.android.material.textfield.TextInputLayout
 import com.vicmikhailau.maskededittext.MaskedEditText
 
@@ -53,7 +52,7 @@ class MeetingFollowUpFragment : Fragment() {
 
         binding.recyclerViewAgenda.apply {
             layoutManager = LinearLayoutManager(context)
-            adapter = AgendaAdapter(agendaItems)
+            adapter = CheckListAdapter(agendaItems)
             isNestedScrollingEnabled = false
         }
     }

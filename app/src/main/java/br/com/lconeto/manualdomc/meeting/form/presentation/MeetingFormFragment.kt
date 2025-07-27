@@ -1,5 +1,6 @@
 package br.com.lconeto.manualdomc.meeting.form.presentation
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,7 +15,7 @@ import br.com.lconeto.manualdomc.common.domain.extensions.navigateTo
 import br.com.lconeto.manualdomc.common.domain.extensions.toStringRoles
 import br.com.lconeto.manualdomc.common.domain.extensions.toastMessage
 import br.com.lconeto.manualdomc.databinding.FragmentMeetingFormBinding
-import br.com.lconeto.manualdomc.meeting.form.presentation.adapter.AgendaAdapter
+import br.com.lconeto.manualdomc.meeting.form.presentation.adapter.AgendaInsertAdapter
 import br.com.lconeto.manualdomc.meeting.index.data.MeetingData
 import com.google.android.material.textfield.TextInputLayout
 import com.vicmikhailau.maskededittext.MaskedEditText
@@ -26,7 +27,7 @@ class MeetingFormFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val agendaItems = mutableListOf<String>()
-    private lateinit var agendaAdapter: AgendaAdapter
+    private lateinit var agendaAdapter: AgendaInsertAdapter
 
     private val meetingFormViewModel by lazy {
         ViewModelProvider(
@@ -59,11 +60,29 @@ class MeetingFormFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
-        agendaAdapter = AgendaAdapter(agendaItems)
+        agendaAdapter = AgendaInsertAdapter(
+            agendaItems,
+            onDeleteClick = { meeting ->
+                showDeleteConfirmationDialog(meeting)
+            }
+        )
         binding.recyclerViewAgendaItems.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = agendaAdapter
         }
+    }
+
+    private fun showDeleteConfirmationDialog(item: String) {
+        AlertDialog.Builder(requireContext())
+            .setTitle("Confirmar Exclusão")
+            .setMessage("Tem certeza que deseja excluir o item $item da Ordem do Dia?")
+            .setPositiveButton("Excluir") { dialog, _ ->
+                agendaItems.remove(item)
+                setupRecyclerView()
+                dialog.dismiss()
+            }
+            .setNegativeButton("Cancelar", null)
+            .show()
     }
 
     private fun setupListeners() {

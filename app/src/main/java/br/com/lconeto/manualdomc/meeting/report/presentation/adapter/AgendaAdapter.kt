@@ -1,4 +1,4 @@
-package br.com.lconeto.manualdomc.meeting.form.presentation.adapter
+package br.com.lconeto.manualdomc.meeting.report.presentation.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
